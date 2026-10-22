@@ -1,0 +1,1736 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Protocolo das Japonesas — Método Wa 40+</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rose:#F2A7A7; --rose-d:#D9777F; --rose-l:#FCEBEB;
+  --nude:#F5E6D8; --bg:#FBF7F3; --card:#FFFFFF;
+  --gold:#C9A84C; --gold-l:#FFF6D6;
+  --sage:#A8C5A0; --sage-d:#5F8A5B; --sage-l:#EAF3E7;
+  --lav:#E8EAF6; --lav-d:#5560A8;
+  --ink:#2E2A2B; --ink2:#6B6264; --line:#EADFD5;
+  --verm:#B8423F;
+  --serif:'Playfair Display',Georgia,'Times New Roman',serif;
+  --sans:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+  --r:16px; --sh:0 4px 18px rgba(120,80,70,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
+button{font-family:inherit;cursor:pointer}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--serif);line-height:1.25;color:var(--ink)}
+/* ===== Layout ===== */
+#side{position:fixed;top:0;left:0;bottom:0;width:290px;background:#fff;border-right:1px solid var(--line);overflow-y:auto;z-index:50;transition:transform .3s}
+#side .brand{padding:22px 20px 14px;border-bottom:1px solid var(--line);background:linear-gradient(135deg,var(--rose-l),var(--nude))}
+#side .brand small{display:block;letter-spacing:.2em;font-size:10px;color:var(--ink2)}
+#side .brand b{font-family:var(--serif);font-size:20px;display:block;margin-top:2px}
+#side .brand span.kanji{float:right;font-size:34px;color:var(--verm);font-family:'Hiragino Mincho ProN','Noto Serif JP',serif;line-height:1}
+.navg{padding:14px 12px 4px}
+.navg h6{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);padding:0 10px 6px;font-family:var(--sans);font-weight:700}
+.navl{display:flex;gap:10px;align-items:center;padding:9px 12px;border-radius:10px;font-size:14px;color:var(--ink);cursor:pointer;border:0;background:none;width:100%;text-align:left}
+.navl:hover{background:var(--nude)}
+.navl.on{background:var(--rose-l);font-weight:700;color:var(--verm)}
+.navl .ck{margin-left:auto;font-size:12px;color:var(--sage-d);opacity:0}
+.navl.done .ck{opacity:1}
+#prog{position:sticky;bottom:0;background:#fff;border-top:1px solid var(--line);padding:12px 20px 16px;font-size:12px;color:var(--ink2)}
+#prog .bar{height:8px;background:var(--nude);border-radius:99px;overflow:hidden;margin-top:6px}
+#prog .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--rose),var(--gold));border-radius:99px;transition:width .5s}
+#top{display:none;position:fixed;top:0;left:0;right:0;height:54px;background:#fff;border-bottom:1px solid var(--line);z-index:40;align-items:center;padding:0 14px;gap:12px}
+#top button{background:none;border:0;font-size:26px;line-height:1}
+#top b{font-family:var(--serif);font-size:16px}
+#top .mini{margin-left:auto;font-size:12px;color:var(--ink2)}
+main{margin-left:290px;padding:40px 24px 80px}
+.page{display:none;max-width:860px;margin:0 auto;animation:fade .4s}
+.page.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+#veil{display:none;position:fixed;inset:0;background:rgba(40,25,25,.45);z-index:45}
+/* ===== Type ===== */
+.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.mhead{background:linear-gradient(135deg,var(--rose-l) 0%,var(--nude) 100%);border-radius:24px;padding:34px 30px;margin-bottom:28px;position:relative;overflow:hidden;border:1px solid var(--line)}
+.mhead::after{content:attr(data-k);position:absolute;right:18px;top:-6px;font-size:120px;color:rgba(184,66,63,.09);font-family:'Hiragino Mincho ProN','Noto Serif JP',serif;line-height:1}
+.mhead h1{font-size:clamp(28px,5vw,40px);margin:6px 0 8px}
+.mhead .q{font-family:var(--serif);font-style:italic;color:var(--ink2);font-size:18px}
+.page p{margin:0 0 14px}
+.page h2{font-size:26px;margin:36px 0 14px}
+.page h3{font-size:20px;margin:22px 0 10px}
+.page h4{font-size:17px;margin:0 0 6px}
+.page ul,.page ol{margin:0 0 16px 22px}
+.page li{margin-bottom:6px}
+.lead{font-size:18px;color:#4a4244}
+.print-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;background:#fff;border:1px dashed var(--gold);color:var(--gold);padding:3px 10px;border-radius:99px;margin-bottom:10px}
+/* ===== Boxes ===== */
+.box{border-radius:var(--r);padding:18px 20px;margin:18px 0;border-left:5px solid;display:flex;gap:14px}
+.box .ic{font-size:24px;line-height:1.2}
+.box .bd{flex:1}.box .bd p:last-child{margin:0}
+.box b.t{display:block;font-family:var(--serif);font-size:17px;margin-bottom:4px}
+.box.alert{background:var(--rose-l);border-color:var(--rose-d)}
+.box.tip{background:var(--gold-l);border-color:var(--gold)}
+.box.act{background:var(--sage-l);border-color:var(--sage-d)}
+.box.sci{background:var(--lav);border-color:var(--lav-d)}
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);padding:22px;border:1px solid var(--line)}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:18px 0}
+.grid .card h4{display:flex;gap:8px;align-items:center}
+.grid .card .em{font-size:30px;display:block;margin-bottom:6px}
+.pill{display:inline-block;font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:99px;background:var(--nude);color:var(--ink2);margin:2px 4px 2px 0}
+.pill.g{background:var(--sage-l);color:var(--sage-d)}.pill.r{background:var(--rose-l);color:var(--verm)}.pill.y{background:var(--gold-l);color:#8a6d12}.pill.b{background:var(--lav);color:var(--lav-d)}
+/* ===== Tables ===== */
+.tw{overflow-x:auto;margin:16px 0;border-radius:var(--r);border:1px solid var(--line);background:#fff}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th{background:var(--nude);text-align:left;padding:11px 14px;font-family:var(--serif);font-size:14px}
+td{padding:11px 14px;border-top:1px solid var(--line);vertical-align:top}
+/* ===== Activity / fields ===== */
+.activity{background:var(--sage-l);border:2px solid var(--sage);border-radius:20px;padding:24px;margin:30px 0}
+.activity .ah{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.activity .ah h3{margin:0}
+.activity .tagx{margin-left:auto;font-size:10.5px;font-weight:700;letter-spacing:.14em;background:var(--sage-d);color:#fff;padding:3px 10px;border-radius:99px}
+label.fl{display:block;font-weight:600;font-size:14.5px;margin:14px 0 6px}
+textarea,input[type=text],input[type=number],select{width:100%;border:1.5px solid var(--line);background:#fff;border-radius:12px;padding:11px 14px;font-family:inherit;font-size:15px;color:var(--ink);transition:border .2s}
+textarea{min-height:84px;resize:vertical;line-height:1.6;background-image:repeating-linear-gradient(transparent,transparent 26px,#f0e6dc 27px)}
+textarea:focus,input:focus,select:focus{outline:none;border-color:var(--rose-d)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.saved{font-size:12px;color:var(--sage-d);height:14px;margin-top:4px;opacity:0;transition:opacity .3s}
+.saved.show{opacity:1}
+/* ===== Buttons ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,var(--gold),#b38f33);color:#fff;border:0;padding:13px 26px;border-radius:99px;font-weight:700;font-size:15px;box-shadow:0 6px 16px rgba(201,168,76,.35);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.rose{background:linear-gradient(135deg,var(--rose),var(--rose-d));box-shadow:0 6px 16px rgba(217,119,127,.35)}
+.btn.ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line);box-shadow:none}
+.btn.sm{padding:8px 16px;font-size:13px}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:44px;flex-wrap:wrap}
+.donebar{margin-top:34px;text-align:center}
+.donebar .btn.on{background:linear-gradient(135deg,var(--sage),var(--sage-d));box-shadow:0 6px 16px rgba(95,138,91,.35)}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin:-8px 0 18px}
+/* ===== Cover ===== */
+.cover{text-align:center;padding:50px 20px;background:radial-gradient(circle at 20% 10%,var(--rose-l),transparent 55%),radial-gradient(circle at 85% 80%,var(--nude),transparent 55%);border-radius:30px;border:1px solid var(--line);position:relative;overflow:hidden}
+.cover .sun{width:120px;height:120px;border-radius:50%;background:var(--verm);margin:0 auto 22px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:60px;font-family:'Hiragino Mincho ProN','Noto Serif JP',serif;box-shadow:0 10px 30px rgba(184,66,63,.3)}
+.cover h1{font-size:clamp(34px,7vw,56px);margin:10px 0}
+.cover h1 em{color:var(--verm);font-style:italic}
+.cover .sub{font-size:19px;color:var(--ink2);max-width:560px;margin:0 auto 20px}
+.seal{display:inline-block;font-size:11px;letter-spacing:.14em;border:1px solid var(--gold);color:var(--gold);padding:5px 14px;border-radius:99px;margin-bottom:16px;font-weight:700;background:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:20px 0 28px}
+.chips span{background:#fff;border:1px solid var(--line);padding:6px 14px;border-radius:99px;font-size:13px;font-weight:600}
+.petal{position:absolute;top:-20px;width:14px;height:14px;background:var(--rose);border-radius:100% 0 100% 0;opacity:.55;animation:fall linear infinite}
+@keyframes fall{to{transform:translateY(560px) rotate(360deg)}}
+/* ===== Index ===== */
+.idx{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.idx button{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;text-align:left;font-size:14.5px;transition:all .2s}
+.idx button:hover{border-color:var(--rose-d);transform:translateX(3px)}
+.idx button .n{margin-left:auto;font-size:11px;color:var(--gold);font-weight:700}
+/* ===== Workout ===== */
+.ex{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;margin:18px 0;box-shadow:var(--sh)}
+.ex .exh{display:flex;align-items:center;gap:14px;margin-bottom:10px}
+.ex .num{width:42px;height:42px;border-radius:50%;background:var(--rose);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:var(--serif);font-size:19px;flex:none}
+.ex .exh h3{margin:0;font-size:20px}
+.ex .meta{font-size:13px;color:var(--ink2)}
+.ex svg{display:block;margin:10px auto;max-width:100%}
+.player{background:linear-gradient(160deg,#3a2a2e,#5b3b43);color:#fff;border-radius:26px;padding:28px 22px;text-align:center;margin:20px 0}
+.player h3{color:#fff;margin:0 0 4px}
+.player .ring{position:relative;width:200px;height:200px;margin:14px auto}
+.player .ring svg{transform:rotate(-90deg)}
+.player .ring .tm{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--serif);font-size:54px;line-height:1}
+.player .ring .tm small{font-size:12px;font-family:var(--sans);opacity:.75;margin-top:4px;letter-spacing:.1em}
+.player .cue{min-height:48px;font-size:15px;opacity:.92;max-width:460px;margin:0 auto 12px}
+.player .ctrl{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.player .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.steps{display:flex;gap:6px;justify-content:center;margin:12px 0}
+.steps i{width:26px;height:6px;border-radius:9px;background:rgba(255,255,255,.25)}
+.steps i.on{background:var(--rose)}.steps i.ok{background:var(--sage)}
+/* ===== Recipes ===== */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.filters button{border:1.5px solid var(--line);background:#fff;border-radius:99px;padding:7px 15px;font-size:13px;font-weight:600}
+.filters button.on{background:var(--rose);color:#fff;border-color:var(--rose)}
+.rec{background:#fff;border:1px solid var(--line);border-radius:16px;margin:10px 0;overflow:hidden}
+.rec summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;padding:14px 16px}
+.rec summary::-webkit-details-marker{display:none}
+.rec summary .e{font-size:28px}
+.rec summary .tt{font-weight:700}
+.rec summary .ss{font-size:12.5px;color:var(--ink2)}
+.rec summary .heart{margin-left:auto;background:none;border:0;font-size:22px}
+.rec[open]{border-color:var(--rose)}
+.rec .rb{padding:2px 20px 18px;border-top:1px dashed var(--line)}
+.rec .rb h5{font-family:var(--serif);font-size:15px;margin:12px 0 4px;color:var(--verm)}
+.rec .rb ul,.rec .rb ol{margin:0 0 6px 20px}
+/* ===== Calendar ===== */
+.weekh{display:flex;align-items:center;gap:10px;margin:26px 0 10px;font-family:var(--serif);font-size:19px}
+.weekh .wb{margin-left:auto;font-size:12px;font-family:var(--sans);color:var(--ink2)}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.day{aspect-ratio:1;border-radius:14px;background:#fff;border:1.5px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:700;font-size:18px;position:relative;transition:all .2s}
+.day small{font-size:10px;font-weight:600;color:var(--ink2)}
+.day:hover{border-color:var(--rose-d)}
+.day.sel{border-color:var(--verm);box-shadow:0 0 0 3px var(--rose-l)}
+.day.part{background:var(--gold-l)}
+.day.full{background:var(--sage);color:#fff;border-color:var(--sage-d)}
+.day.full small{color:#fff}
+.day.mile::after{content:'🏅';position:absolute;top:-8px;right:-4px;font-size:16px}
+.dpanel{background:#fff;border:2px solid var(--rose);border-radius:20px;padding:22px;margin:20px 0;box-shadow:var(--sh)}
+.dpanel h3{margin:0 0 4px}
+.dpanel .ph{font-family:var(--serif);font-style:italic;color:var(--ink2);margin-bottom:12px}
+.tk{display:flex;gap:12px;align-items:flex-start;padding:12px;border-radius:12px;border:1.5px solid var(--line);margin:8px 0;cursor:pointer;background:#fff}
+.tk input{width:22px;height:22px;accent-color:var(--sage-d);flex:none;margin-top:2px}
+.tk.ok{background:var(--sage-l);border-color:var(--sage)}
+.tk b{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.badges{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:18px 0}
+.badge{background:#fff;border:1.5px dashed var(--line);border-radius:16px;text-align:center;padding:14px 8px;filter:grayscale(1);opacity:.55;transition:all .4s}
+.badge.on{filter:none;opacity:1;border-style:solid;border-color:var(--gold);background:var(--gold-l)}
+.badge .e{font-size:34px}.badge b{display:block;font-size:13px}.badge small{font-size:11px;color:var(--ink2)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+.stat{background:#fff;border:1px solid var(--line);border-radius:16px;text-align:center;padding:14px 6px}
+.stat b{font-family:var(--serif);font-size:30px;display:block;color:var(--verm)}
+.stat small{font-size:12px;color:var(--ink2)}
+/* ===== Quiz ===== */
+.quiz{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;margin:18px 0;box-shadow:var(--sh)}
+.qq{margin:18px 0}
+.qq p{font-weight:700;margin-bottom:8px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1.5px solid var(--line);border-radius:12px;margin:6px 0;cursor:pointer;font-size:14.5px;transition:all .15s}
+.opt:hover{border-color:var(--rose)}
+.opt.on{background:var(--rose-l);border-color:var(--rose-d)}
+.opt i{font-style:normal;font-weight:700;color:var(--verm);width:20px;flex:none}
+.qres{display:none;margin-top:20px;padding:22px;border-radius:18px;background:linear-gradient(135deg,var(--gold-l),var(--rose-l));border:2px solid var(--gold)}
+.qres.show{display:block;animation:fade .5s}
+.qres h3{margin:0 0 6px}
+.bars .br{display:flex;align-items:center;gap:10px;font-size:13px;margin:5px 0}
+.bars .br span{width:130px}.bars .br div{flex:1;height:10px;background:#fff;border-radius:9px;overflow:hidden}
+.bars .br i{display:block;height:100%;background:var(--rose-d);border-radius:9px}
+/* ===== Tools ===== */
+.wheel{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}
+.sl{margin:10px 0}.sl label{display:flex;justify-content:space-between;font-size:14px;font-weight:600}
+.sl input[type=range]{width:100%;accent-color:var(--rose-d)}
+.breath{text-align:center;margin:18px 0}
+.breath .orb{width:150px;height:150px;border-radius:50%;margin:16px auto;background:radial-gradient(circle at 35% 30%,#fff,var(--rose));display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:20px;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.25);transition:transform 4s ease-in-out;box-shadow:0 10px 30px rgba(217,119,127,.35)}
+.sat{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;margin:18px 0}
+.satbar{height:26px;border-radius:99px;background:linear-gradient(90deg,#f4c6c6,var(--gold) 55%,var(--sage) 80%,#e08d8d);position:relative;margin:16px 0 8px}
+.satbar i{position:absolute;top:-6px;width:6px;height:38px;background:var(--ink);border-radius:4px;left:0;transition:left .3s}
+.shop h4{margin:18px 0 4px}
+.sh{display:flex;gap:10px;align-items:center;padding:7px 4px;border-bottom:1px dashed var(--line);cursor:pointer;font-size:14.5px}
+.sh input{accent-color:var(--sage-d);width:18px;height:18px}
+.sh.ok span{text-decoration:line-through;color:var(--ink2)}
+.msel{display:flex;gap:8px;margin:12px 0}
+.msel button{flex:1;padding:10px;border-radius:12px;border:1.5px solid var(--line);background:#fff;font-weight:700;font-size:14px}
+.msel button.on{background:var(--rose);color:#fff;border-color:var(--rose)}
+.menu-day{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:10px 0}
+.menu-day h4{margin:0 0 6px;color:var(--verm)}
+.menu-day div{font-size:14px;margin:3px 0}
+.menu-day div b{display:inline-block;width:78px;color:var(--ink2);font-weight:600}
+.cert{background:#fff;border:6px double var(--gold);border-radius:12px;padding:40px 24px;text-align:center;margin:20px 0;background-image:radial-gradient(circle at 50% 0,var(--rose-l),transparent 60%)}
+.cert h2{margin:6px 0}.cert .nm{font-family:var(--serif);font-size:30px;color:var(--verm);margin:10px 0;border-bottom:1px solid var(--gold);display:inline-block;padding:0 24px}
+.cert .sun{width:64px;height:64px;border-radius:50%;background:var(--verm);color:#fff;font-size:34px;line-height:64px;margin:0 auto 10px;font-family:'Hiragino Mincho ProN','Noto Serif JP',serif}
+.footnote{font-size:12.5px;color:var(--ink2);text-align:center;margin-top:36px;border-top:1px solid var(--line);padding-top:16px}
+/* ===== Responsive ===== */
+@media(max-width:900px){
+  #side{transform:translateX(-100%)}
+  #side.open{transform:none;box-shadow:0 0 40px rgba(0,0,0,.25)}
+  #top{display:flex}
+  main{margin-left:0;padding:74px 14px 60px}
+  .row2,.wheel{grid-template-columns:1fr}
+  .mhead{padding:26px 20px}
+  .cal{gap:5px}.day{font-size:15px;border-radius:10px}
+  .stats{gap:8px}.stat b{font-size:24px}
+}
+/* ===== Print ===== */
+@media print{
+  #side,#top,#veil,.pager,.donebar,.tools,.player,.filters,.btn,.petal{display:none!important}
+  main{margin:0;padding:0}
+  body{background:#fff;font-size:12.5px}
+  .page{display:none!important;max-width:none}
+  .page.on{display:block!important}
+  .card,.box,.ex,.activity,.quiz{box-shadow:none;break-inside:avoid}
+  .rec{break-inside:avoid}
+  .rec:not([open]) .rb{display:block}
+  textarea{border:1px solid #bbb;min-height:90px}
+}
+</style>
+</head>
+<body>
+<div id="top"><button id="burger" aria-label="Abrir menu">☰</button><b>Protocolo das Japonesas</b><span class="mini" id="miniProg">0%</span></div>
+<div id="veil"></div>
+<aside id="side">
+  <div class="brand"><span class="kanji">和</span><small>PROTOCOLO</small><b>das Japonesas</b></div>
+  <nav id="nav"></nav>
+  <div id="prog"><span id="progTxt">Seu progresso: 0%</span><div class="bar"><i id="progBar"></i></div></div>
+</aside>
+<main>
+
+<!-- ================= CAPA ================= -->
+<section class="page" id="p-capa">
+  <div class="cover" id="coverBox">
+    <span class="seal">PROTOCOLO COMPLETO 2026 · EDIÇÃO 40+</span>
+    <div class="sun">和</div>
+    <p class="eyebrow">Método Wa · Harmonia para o corpo</p>
+    <h1>Protocolo das <em>Japonesas</em></h1>
+    <p class="sub">Dieta japonesa adaptada ao Brasil, 7 minutos de movimento em casa e os hábitos que sustentam leveza, energia e aparência jovem depois dos 40.</p>
+    <p class="lead" style="max-width:560px;margin:0 auto 6px">Você não está falhando.<br><b>O seu corpo mudou as regras, e agora você vai aprender as novas.</b></p>
+    <div class="chips">
+      <span>🍚 Shoku · Dieta</span><span>🌸 Undō · 7 minutos</span><span>🏡 Seikatsu · Hábitos</span>
+      <span>🍲 26 receitas</span><span>🗓️ 28 dias</span><span>🧪 3 testes</span><span>🧰 7 ferramentas</span><span>📖 16 módulos</span>
+    </div>
+    <button class="btn rose" data-go="p-m01">Começar minha jornada →</button>
+    <p class="footnote" style="border:0;margin-top:22px">Conteúdo educativo e inspirado em hábitos da cultura japonesa. Não substitui acompanhamento médico ou nutricional.</p>
+  </div>
+</section>
+
+<!-- ================= ÍNDICE ================= -->
+<section class="page" id="p-indice">
+  <div class="mhead" data-k="目次"><p class="eyebrow">Navegação</p><h1>Índice Completo</h1><p class="q">Toque em qualquer seção para ir direto.</p></div>
+  <div id="idxBox"></div>
+  <div class="box tip"><span class="ic">💡</span><div class="bd"><b class="t">Como aproveitar melhor</b><p>Faça um módulo por dia nos primeiros dias. Depois, comece o <b>Calendário de 28 dias</b> (módulo 12) e use o resto como consulta. Tudo o que você escreve fica salvo neste aparelho.</p></div></div>
+</section>
+
+<!-- ================= IMPRIMÍVEIS ================= -->
+<section class="page" id="p-print">
+  <div class="mhead" data-k="印刷"><p class="eyebrow">Tangibilidade</p><h1>Páginas Imprimíveis</h1><p class="q">Imprima, escreva, sinta. O protocolo nas suas mãos.</p></div>
+  <p class="lead">Escrever à mão ajuda a fixar o que você decide. Cada página abaixo tem campos para preencher e foi pensada para virar o seu caderno do protocolo.</p>
+  <div class="box tip"><span class="ic">🖨️</span><div class="bd"><b class="t">Como imprimir</b><p>Abra a página desejada e use o botão <b>Imprimir esta página</b> (ou Ctrl+P / ⌘+P). Só a página aberta é impressa, sem o menu.</p></div></div>
+  <div class="grid" id="printGrid"></div>
+</section>
+
+<!-- ================= MÓDULO 01 ================= -->
+<section class="page" id="p-m01" data-mod="1">
+  <div class="mhead" data-k="始"><p class="eyebrow">🌿 Módulo 01 · Fundação</p><h1>Reinício Mental</h1><p class="q">"O problema nunca foi a sua força de vontade."</p></div>
+  <div class="tools"><button class="btn ghost sm" data-print>🖨️ Imprimir esta página</button></div>
+
+  <p class="lead">Você acorda. Passa pelo espelho. E já começa o dia com aquela conversa interna dura.</p>
+  <p>O corpo que respondia rápido aos 30 agora parece teimoso. A barriga ficou. O cansaço também. O sono não é mais o mesmo. E aquela dieta que funcionava há dez anos simplesmente não funciona mais.</p>
+  <p>Em algum momento alguém te convenceu de que isso era culpa sua. Que faltava disciplina. Que bastava querer mais.</p>
+
+  <div class="box alert"><span class="ic">❗</span><div class="bd"><b class="t">Isso foi uma conta mal feita</b><p>Depois dos 40, o seu corpo passa por mudanças reais: os hormônios sexuais oscilam, a massa muscular começa a diminuir mais rápido, o sono muda, o estresse pesa diferente. Nenhuma força de vontade compensa sozinha uma regra do jogo que mudou. <b>O erro não é seu. Nunca foi.</b></p></div></div>
+
+  <h2>E se a resposta já existisse, a milhares de quilômetros daqui?</h2>
+  <p>O Japão tem uma das maiores expectativas de vida do mundo e uma das menores taxas de obesidade entre os países ricos. A região de Okinawa é famosa por ter muitas pessoas que chegam aos 90 e 100 anos com autonomia.</p>
+  <p>Não é só genética. Parte importante é <b>jeito de viver</b>: como comem, quanto comem, como se movem no dia a dia, como descansam e como cuidam da pele. Hábitos pequenos, repetidos por décadas.</p>
+  <p>Esse protocolo pega esses hábitos e <b>traduz para a sua cozinha, no Brasil</b>. Sem peixe cru, sem ingrediente importado, sem academia, sem sofrimento.</p>
+
+  <div class="box sci"><span class="ic">🔬</span><div class="bd"><b class="t">Honestidade antes de tudo</b><p>Nenhum protocolo faz milagre e as japonesas não são "naturalmente magras". Elas têm hábitos. É exatamente isso que você vai aprender, e o que o corpo 40+ responde melhor: <b>constância suave</b>, não esforço extremo.</p></div></div>
+
+  <h2>O que você vai encontrar aqui</h2>
+  <ul>
+    <li>✓ Por que o corpo muda depois dos 40, explicado de forma simples</li>
+    <li>✓ <b>Shoku:</b> uma dieta japonesa adaptada, com 26 receitas e cardápios prontos</li>
+    <li>✓ <b>Undō:</b> um ritual de 7 minutos em casa, com cronômetro, para preservar músculo e energia</li>
+    <li>✓ <b>Seikatsu:</b> 12 truques que as japonesas usam todo dia, mais rituais de pele, chá e banho</li>
+    <li>✓ Calendário gamificado de 28 dias, medidas, testes de perfil e 7 ferramentas de coaching</li>
+  </ul>
+
+  <h3>Como você está hoje?</h3>
+  <p>Marque o que combina. Sem julgamento, é só um ponto de partida:</p>
+  <div class="card" id="m1Signs"></div>
+
+  <div class="box act"><span class="ic">🌱</span><div class="bd"><b class="t">Antes de continuar</b><p>Coloque a mão no peito. Respire fundo e diga em voz baixa: <i>"Eu não falhei. Eu só não tinha as ferramentas certas. Até agora."</i></p></div></div>
+
+  <div class="activity">
+    <div class="ah"><span style="font-size:26px">✏️</span><h3>Carta para Você Mesma</h3><span class="tagx">ATIVIDADE</span></div>
+    <label class="fl">Escreva 3 coisas que você admira no seu corpo hoje. Não no corpo que você quer ter, no corpo que você TEM. (Força, resistência, mãos, sorriso, tudo vale.)</label>
+    <textarea data-save="m1_admira"></textarea>
+    <label class="fl">Complete: "Eu estou aqui porque eu quero..."</label>
+    <textarea data-save="m1_porque"></textarea>
+    <div class="saved"></div>
+  </div>
+
+  <div class="box tip"><span class="ic">🌸</span><div class="bd"><b class="t">Você acabou de dar o primeiro passo</b><p>Reconhecer a dor sem se culpar é um ato de coragem. Agora vamos entender o que muda no corpo depois dos 40.</p></div></div>
+</section>
+
+<!-- ================= MÓDULO 02 ================= -->
+<section class="page" id="p-m02" data-mod="2">
+  <div class="mhead" data-k="体"><p class="eyebrow">🧠 Módulo 02 · Fundação</p><h1>O Corpo Depois dos 40</h1><p class="q">"Não é preguiça. É biologia mudando de fase."</p></div>
+  <div class="tools"><button class="btn ghost sm" data-print>🖨️ Imprimir esta página</button></div>
+
+  <p class="lead">A partir dos 40, muita mulher entra na <b>perimenopausa</b>: uma fase de transição que pode durar anos, antes da menopausa. Nem todo mundo sente do mesmo jeito, mas quase todas notam mudanças.</p>
+
+  <h2>O que está acontecendo por dentro</h2>
+  <div class="grid">
+    <div class="card"><span class="em">🌡️</span><h4>Hormônios oscilam</h4><p>Estrogênio e progesterona sobem e descem de forma irregular até estabilizarem em níveis mais baixos. Isso mexe com sono, humor, temperatura corporal e onde o corpo guarda gordura (mais na barriga).</p></div>
+    <div class="card"><span class="em">💪</span><h4>O músculo diminui</h4><p>A perda de massa muscular, que começa por volta dos 30, tende a acelerar nessa fase. Menos músculo significa gastar menos energia em repouso. É por isso que "comer igual" começa a engordar.</p></div>
+    <div class="card"><span class="em">🍬</span><h4>A insulina fica mais sensível a abusos</h4><p>O corpo lida pior com picos de açúcar e carboidratos refinados. Resultado: mais fome, mais sonolência depois de comer e mais gordura abdominal.</p></div>
+    <div class="card"><span class="em">😮‍💨</span><h4>O estresse pesa mais</h4><p>Cortisol alto por muito tempo atrapalha o sono, aumenta a vontade de doce e favorece acúmulo de gordura na região da barriga.</p></div>
+    <div class="card"><span class="em">🌙</span><h4>O sono muda</h4><p>Ondas de calor, ansiedade e despertares noturnos são comuns. Dormir mal aumenta fome e reduz disposição no dia seguinte.</p></div>
+    <div class="card"><span class="em">🦴</span><h4>Os ossos pedem atenção</h4><p>Com a queda de estrogênio, a densidade óssea tende a diminuir. Movimento de força, cálcio e sol da manhã entram como cuidado de longo prazo.</p></div>
+  </div>
+
+  <div class="box alert"><span class="ic">🧩</span><div class="bd"><b class="t">A virada de chave</b><p>Cada uma dessas mudanças tem uma resposta nos hábitos. Músculo responde a <b>movimento e proteína</b>. Insulina responde ao <b>jeito de montar o prato</b>. Cortisol e sono respondem a <b>rituais</b>. É exatamente isso que as japonesas fazem todo dia, e é o que você vai aprender.</p></div></div>
+
+  <h2>Os 4 reguladores do Método Wa</h2>
+  <div class="tw"><table>
+    <tr><th>Regulador</th><th>Por que importa depois dos 40</th><th>Onde você trabalha</th></tr>
+    <tr><td>💪 <b>Músculo</b></td><td>É o "motor" que mantém o metabolismo ativo e protege ossos e articulações</td><td>Undō (módulo 07) + proteína no prato (módulo 04)</td></tr>
+    <tr><td>🍚 <b>Prato e intestino</b></td><td>Estabiliza fome e glicose; um intestino saudável ajuda digestão e inflamação</td><td>Shoku (módulos 04 a 06)</td></tr>
+    <tr><td>😴 <b>Sono</b></td><td>Regula fome, humor e recuperação do corpo</td><td>Seikatsu (módulos 08 e 09)</td></tr>
+    <tr><td>🌿 <b>Estresse</b></td><td>Cortisol alto bagunça apetite, sono e gordura abdominal</td><td>Pausas Ma, respiração, ofurô (módulos 08, 09 e 13)</td></tr>
+  </table></div>
+
+  <h2>Quando conversar com o seu médico</h2>
+  <div class="box sci"><span class="ic">🩺</span><div class="bd"><b class="t">Este protocolo apoia, não diagnostica</b>
+    <p>Procure ginecologista ou endocrinologista se você tiver: sangramento muito intenso ou irregular, ondas de calor que atrapalham a vida, cansaço extremo, ganho de peso muito rápido, tristeza persistente, palpitações, queda de cabelo importante ou dor óssea.</p>
+    <p>Vale também conversar sobre <b>exames de rotina</b> que costumam ser avaliados nessa fase (como glicemia, colesterol, tireoide e vitamina D). A decisão sobre qualquer tratamento, incluindo terapia hormonal, é sempre do seu médico.</p></div></div>
+
+  <div class="activity">
+    <div class="ah"><span style="font-size:26px">✏️</span><h3>Diagnóstico Honesto</h3><span class="tagx">ATIVIDADE</span></div>
+    <p>Marque os sinais que você percebe hoje:</p>
+    <div id="m2Signs"></div>
+    <div id="m2Out" class="box tip" style="margin-top:14px"><span class="ic">📋</span><div class="bd"><b class="t">Seu mapa</b><p id="m2Msg">Marque os itens acima para ver o seu resultado.</p></div></div>
+    <label class="fl">Se você pudesse mudar UMA coisa já esta semana, qual seria?</label>
+    <textarea data-save="m2_uma"></textarea>
+    <div class="saved"></div>
+  </div>
+</section>
+
+<!-- ================= MÓDULO 03 ================= -->
+<section class="page" id="p-m03" data-mod="3">
+  <div class="mhead" data-k="和"><p class="eyebrow">⚡ Módulo 03 · Fundação</p><h1>O Método Wa</h1><p class="q">"Wa (和): harmonia. Quando tudo trabalha junto, o corpo responde."</p></div>
+  <div class="tools"><button class="btn ghost sm" data-print>🖨️ Imprimir esta página</button></div>
+
+  <p class="lead">Wa é a palavra japonesa para <b>harmonia</b>. É a ideia central do método: não adianta cuidar só da comida ou só do exercício. As japonesas vivem um sistema em que tudo se ajuda.</p>
+
+  <div class="grid">
+    <div class="card" style="border-top:5px solid var(--rose)"><span class="em">🍚</span><h4>1 · Shoku (食)</h4><p><b>Comer.</b> Prato Wa, caldo, variedade, proteína em cada refeição e parar nos 80%.</p><span class="pill r">Módulos 04, 05, 06</span></div>
+    <div class="card" style="border-top:5px solid var(--gold)"><span class="em">🌸</span><h4>2 · Undō (運動)</h4><p><b>Mover.</b> Ritual de 7 minutos em casa e caminhadas leves para preservar músculo e energia.</p><span class="pill y">Módulo 07</span></div>
+    <div class="card" style="border-top:5px solid var(--sage)"><span class="em">🏡</span><h4>3 · Seikatsu (生活)</h4><p><b>Viver.</b> Sono, ofurô, chá, sol, pausas e pele: os truques diários das japonesas.</p><span class="pill g">Módulos 08, 09, 10</span></div>
+  </div>
+
+  <h2>As 7 regras do Método Wa</h2>
+  <div class="box act"><span class="ic">1️⃣</span><div class="bd"><b class="t">Regra dos 80% (Hara Hachi Bu)</b><p>Pare de comer quando estiver satisfeita, não estufada. Em torno de 80%. O cérebro leva cerca de 20 minutos para registrar a saciedade, então comer devagar já resolve metade do problema.</p></div></div>
+  <div class="box act"><span class="ic">2️⃣</span><div class="bd"><b class="t">Regra do Prato Wa</b><p>Caldo ou sopa leve + metade do prato de vegetais variados + proteína do tamanho da palma da mão + carboidrato do tamanho do punho.</p></div></div>
+  <div class="box act"><span class="ic">3️⃣</span><div class="bd"><b class="t">Regra da Ordem</b><p>Comece pelo caldo e pelos vegetais, depois a proteína, e deixe o carboidrato por último. Estudos sugerem que essa ordem reduz o pico de glicose depois da refeição.</p></div></div>
+  <div class="box act"><span class="ic">4️⃣</span><div class="bd"><b class="t">Regra dos 7 Minutos</b><p>Todos os dias, um ritual de movimento de 7 minutos. Pouco, mas todo dia, porque constância vale mais que intensidade.</p></div></div>
+  <div class="box act"><span class="ic">5️⃣</span><div class="bd"><b class="t">Regra da Caminhada Suave</b><p>Depois da refeição principal, caminhe 10 a 15 minutos em ritmo tranquilo. É um dos hábitos mais simples e mais comuns na rotina japonesa.</p></div></div>
+  <div class="box act"><span class="ic">6️⃣</span><div class="bd"><b class="t">Regra do Ritual Noturno</b><p>Banho morno, pele cuidada, telas desligadas. Sinalize para o corpo que o dia acabou. Sono bom é parte do protocolo.</p></div></div>
+  <div class="box act"><span class="ic">7️⃣</span><div class="bd"><b class="t">Regra Kaizen (1% melhor)</b><p>Kaizen significa melhoria contínua. Um pequeno ajuste por dia. Você não precisa ser perfeita, precisa ser constante.</p></div></div>
+
+  <h2>Teste ao vivo: o termômetro dos 80%</h2>
+  <p>Mova o controle para sentir onde fica o ponto de parada do Hara Hachi Bu.</p>
+  <div class="sat" id="satBox"></div>
+
+  <div class="box sci"><span class="ic">🔬</span><div class="bd"><b class="t">Em resumo</b><p>Os hábitos do método têm bases reconhecidas: proteína e treino de força para manter músculo, composição do prato para estabilizar a glicose, rotina de sono e relaxamento para reduzir o impacto do estresse. Os resultados variam de pessoa para pessoa.</p></div></div>
+
+  <div class="activity">
+    <div class="ah"><span style="font-size:26px">✏️</span><h3>Meu Plano dos 3 Pilares</h3><span class="tagx">ATIVIDADE</span></div>
+    <label class="fl">🍚 Shoku: a mudança de alimentação que farei esta semana</label>
+    <textarea data-save="m3_shoku"></textarea>
+    <label class="fl">🌸 Undō: quando e onde farei meu ritual de 7 minutos</label>
+    <textarea data-save="m3_undo"></textarea>
+    <label class="fl">🏡 Seikatsu: o hábito de rotina que vou proteger (sono, pausa, ritual)</label>
+    <textarea data-save="m3_seik"></textarea>
+    <div class="saved"></div>
+  </div>
+</section>
+
+<!-- ================= MÓDULO 04 ================= -->
+<section class="page" id="p-m04" data-mod="4">
+  <div class="mhead" data-k="食"><p class="eyebrow">🍚 Módulo 04 · Shoku (Dieta)</p><h1>O Prato Wa</h1><p class="q">"Não é comer menos. É comer do jeito que o corpo 40+ entende."</p></div>
+  <div class="tools"><button class="btn ghost sm" data-print>🖨️ Imprimir esta página</button></div>
+
+  <p class="lead">A culinária japonesa tradicional (<i>washoku</i>) tem uma lógica clara: porções pequenas, muita variedade, caldo, vegetais, proteína leve e pouco açúcar. Nada de "dieta de sofrimento".</p>
+  <p>Aqui você vai usar essa <b>lógica</b>, não os ingredientes. O arroz com feijão, o ovo, a sardinha, a couve e a laranja da sua cozinha cabem perfeitamente.</p>
+
+  <div class="box tip"><span class="ic">🇧🇷</span><div class="bd"><b class="t">Princípios japoneses, ingredientes brasileiros</b><p>Você não vai precisar de missô, nori ou natto. Todas as receitas e cardápios deste protocolo usam o que existe no mercado do seu bairro. Se um dia quiser experimentar um ingrediente japonês, ele vem sempre como <i>opcional</i>.</p></div></div>
+
+  <h2>1 · Monte o seu Prato Wa</h2>
+  <p>Inspirado no <i>ichiju-sansai</i> ("uma sopa e três acompanhamentos"), o Prato Wa tem quatro partes:</p>
+  <div class="card" style="text-align:center">
+    <svg viewBox="0 0 520 280" width="100%" style="max-width:520px" role="img" aria-label="Prato Wa: metade vegetais, um quarto proteína, um quarto carboidrato, e uma tigela de caldo">
+      <circle cx="170" cy="140" r="115" fill="#fff" stroke="#EADFD5" stroke-width="4"/>
+      <path d="M170 140 L170 25 A115 115 0 0 0 170 255 Z" fill="#A8C5A0"/>
+      <path d="M170 140 L170 25 A115 115 0 0 1 285 140 Z" fill="#F2A7A7"/>
+      <path d="M170 140 L285 140 A115 115 0 0 1 170 255 Z" fill="#F5E6D8"/>
+      <line x1="170" y1="25" x2="170" y2="255" stroke="#fff" stroke-width="3"/>
+      <line x1="170" y1="140" x2="285" y2="140" stroke="#fff" stroke-width="3"/>
+      <text x="95" y="135" font-size="15" font-weight="700" fill="#2E2A2B" text-anchor="middle">½ Vegetais</text>
+      <text x="95" y="155" font-size="12" fill="#2E2A2B" text-anchor="middle">variados e coloridos</text>
+      <text x="228" y="85" font-size="14" font-weight="700" fill="#2E2A2B" text-anchor="middle">¼ Proteína</text>
+      <text x="228" y="102" font-size="11" fill="#2E2A2B" text-anchor="middle">palma da mão</text>
+      <text x="228" y="195" font-size="14" font-weight="700" fill="#2E2A2B" text-anchor="middle">¼ Carbo</text>
+      <text x="228" y="212" font-size="11" fill="#2E2A2B" text-anchor="middle">punho fechado</text>
+      <ellipse cx="430" cy="150" rx="70" ry="22" fill="#fff" stroke="#C9A84C" stroke-width="3"/>
+      <path d="M360 150 Q362 205 430 208 Q498 205 500 150 Z" fill="#FFF6D6" stroke="#C9A84C" stroke-width="3"/>
+      <ellipse cx="430" cy="152" rx="62" ry="16" fill="#E9C46A" opacity=".55"/>
+      <text x="430" y="245" font-size="14" font-weight="700" fill="#2E2A2B" text-anchor="middle">+ Caldo ou sopa leve</text>
+      <text x="430" y="262" font-size="11" fill="#2E2A2B" text-anchor="middle">antes do prato</text>
+    </svg>
+  </div>
+
+  <div class="tw"><table>
+    <tr><th>Parte do prato</th><th>Opções brasileiras</th><th>Medida prática</th></tr>
+    <tr><td>🥣 <b>Caldo / sopa</b></td><td>Caldo de legumes, caldo de feijão leve, canja sem gordura, sopa de abóbora com gengibre</td><td>1 xícara pequena (150-200 ml)</td></tr>
+    <tr><td>🥬 <b>Vegetais (½ prato)</b></td><td>Couve, brócolis, agrião, abobrinha, cenoura, beterraba, repolho, chuchu, tomate, pepino</td><td>Quanto quiser, de várias cores</td></tr>
+    <tr><td>🍳 <b>Proteína (¼)</b></td><td>Ovo, sardinha, atum, tilápia, frango, carne magra, feijão, lentilha, grão-de-bico, iogurte natural</td><td>Palma da mão (sem dedos)</td></tr>
+    <tr><td>🍚 <b>Carboidrato (¼)</b></td><td>Arroz (de preferência com feijão), batata-doce, mandioca, inhame, aveia, pão integral</td><td>Um punho fechado cozido</td></tr>
+  </table></div>
+
+  <h2>2 · A ordem que muda a refeição</h2>
+  <ol>
+    <li><b>Caldo ou sopa</b> primeiro, devagar.</li>
+    <li><b>Vegetais</b> em seguida.</li>
+    <li><b>Proteína</b> depois.</li>
+    <li><b>Carboidrato</b> por último.</li>
+  </ol>
+  <p>Estudos pequenos sugerem que comer fibras e proteína antes dos carboidratos reduz o pico de glicose depois da refeição, o que pode significar menos sonolência e menos fome em seguida.</p>
+
+  <h2>3 · Proteína: a prioridade nº 1 depois dos 40</h2>
+  <p>Para proteger o músculo, a recomendação mais usada é incluir uma <b>porção generosa de proteína em cada refeição</b>, começando pelo café da manhã. Sem contas complicadas: uma palma da mão por refeição já é um bom ponto de partida.</p>
+  <div class="grid">
+    <div class="card"><h4>🌅 Café da manhã</h4><p>Ovo, iogurte natural, queijo branco, sardinha em lata, atum.</p></div>
+    <div class="card"><h4>☀️ Almoço e jantar</h4><p>Peixe, frango, carne magra, ovo, feijão, lentilha, grão-de-bico.</p></div>
+    <div class="card"><h4>🍵 Lanches</h4><p>Iogurte, ovo cozido, castanhas (uma mão fechada), queijo branco.</p></div>
+  </div>
+  <div class="box sci"><span class="ic">🩺</span><div class="bd"><b class="t">Atenção</b><p>Se você tem doença renal, hepática ou outra condição de saúde, converse com seu médico ou nutricionista sobre a quantidade de proteína ideal para você.</p></div></div>
+
+  <h2>4 · Alimentos aliados</h2>
+  <div class="tw"><table>
+    <tr><th>Alimento</th><th>Por que entra no protocolo</th><th>Inspiração japonesa</th></tr>
+    <tr><td>🥚 Ovos</td><td>Proteína completa, saciedade, nutrientes como colina e vitamina D</td><td>Tamagoyaki, ovo no arroz</td></tr>
+    <tr><td>🐟 Sardinha, atum, tilápia</td><td>Proteína leve; sardinha traz ômega-3 e cálcio (com espinha)</td><td>Peixe é base da dieta japonesa</td></tr>
+    <tr><td>🫘 Feijão, lentilha, grão-de-bico</td><td>Fibra + proteína vegetal; alimentam as bactérias boas do intestino</td><td>Soja, edamame, tofu</td></tr>
+    <tr><td>🥬 Couve, brócolis, agrião, espinafre</td><td>Fibras, vitamina K, cálcio vegetal, folatos</td><td>Folhas verdes e algas</td></tr>
+    <tr><td>🥕 Cenoura, abóbora, beterraba</td><td>Cores = diferentes antioxidantes; adoçam sem açúcar</td><td>Legumes cozidos no vapor ou caldos</td></tr>
+    <tr><td>🥛 Iogurte natural, kefir</td><td>Fermentados que apoiam a flora intestinal; cálcio e proteína</td><td>Natto, missô, tsukemono</td></tr>
+    <tr><td>🥒 Picles caseiro e chucrute</td><td>Fermentados baratos; pequena porção por dia</td><td>Tsukemono (picles japoneses)</td></tr>
+    <tr><td>🌾 Aveia, arroz, batata-doce, mandioca</td><td>Carboidratos de absorção mais lenta, junto com fibra e proteína</td><td>Arroz como acompanhamento, não como protagonista</td></tr>
+    <tr><td>🌰 Linhaça, gergelim, castanhas</td><td>Gorduras boas e lignanas (a linhaça tem compostos semelhantes a fitoestrogênios; os efeitos variam de mulher para mulher)</td><td>Gergelim está em toda a cozinha japonesa</td></tr>
+    <tr><td>🍵 Chá verde e outros chás</td><td>Ritual de pausa, substitui bebida açucarada; efeito direto no metabolismo é pequeno</td><td>Chá o dia todo</td></tr>
+    <tr><td>🍊 Laranja, mamão, abacaxi, kiwi</td><td>Fruta inteira de sobremesa, com fibra</td><td>Fruta é a sobremesa tradicional</td></tr>
+    <tr><td>🧄 Gengibre, alho, cebolinha</td><td>Sabor sem excesso de sal; tempero de quase tudo</td><td>Gengibre, cebolinha, alho</td></tr>
+  </table></div>
+
+  <h2>5 · Traduza o Japão para a sua cozinha</h2>
+  <div class="tw"><table>
+    <tr><th>No Japão</th><th>No seu mercado</th></tr>
+    <tr><td>Missoshiru (sopa de missô)</td><td>Caldo de legumes caseiro ou caldo de feijão leve antes da refeição</td></tr>
+    <tr><td>Natto, tsukemono</td><td>Iogurte natural, kefir, chucrute, picles de pepino/cenoura/beterraba</td></tr>
+    <tr><td>Peixe grelhado</td><td>Sardinha, tilápia, atum, merluza (assados ou grelhados)</td></tr>
+    <tr><td>Tofu</td><td>Ovo, feijão, lentilha, grão-de-bico (tofu é opcional)</td></tr>
+    <tr><td>Algas</td><td>Couve, agrião, espinafre, brócolis (nori é opcional)</td></tr>
+    <tr><td>Arroz japonês</td><td>Arroz comum, em porção de punho, com feijão</td></tr>
+    <tr><td>Chá verde / mugicha</td><td>Chá verde, chá de cevada, gengibre, capim-cidreira, camomila</td></tr>
+    <tr><td>Fruta de sobremesa</td><td>Mamão, laranja, banana, abacaxi, maçã, melancia</td></tr>
+    <tr><td>Porções pequenas em vários potinhos</td><td>Prato de sobremesa ou pratinho + tigelinhas</td></tr>
+  </table></div>
+
+  <h2>6 · O que reduzir, sem culpa</h2>
+  <p>Nada é proibido. A ideia é a regra <b>80/20</b>: 80% do tempo no Prato Wa, 20% de liberdade para a vida real (aniversário, churrasco, doce de domingo).</p>
+  <div class="tw"><table>
+    <tr><th>Reduzir</th><th>Por quê</th><th>Troca simples</th></tr>
+    <tr><td>🍬 Açúcar e doces diários</td><td>Picos de glicose, mais fome</td><td>Fruta + canela, iogurte com fruta</td></tr>
+    <tr><td>🥤 Refrigerante e suco de caixinha</td><td>Calorias líquidas sem saciedade</td><td>Água, chá gelado, água com gás e limão</td></tr>
+    <tr><td>🍞 Farinha branca em excesso</td><td>Absorção rápida, pouca fibra</td><td>Pão integral, aveia, mandioca, batata-doce</td></tr>
+    <tr><td>🍟 Ultraprocessados e frituras</td><td>Muito sal, açúcar e gordura; pouca saciedade</td><td>Assar, grelhar, cozinhar no vapor</td></tr>
+    <tr><td>🍷 Álcool frequente</td><td>Piora o sono, ondas de calor e retém líquido</td><td>Reservar para ocasiões; uma taça, devagar</td></tr>
+    <tr><td>☕ Cafeína tarde da noite</td><td>Atrapalha o sono</td><td>Último café até as 14h-15h</td></tr>
+  </table></div>
+
+  <h2>7 · Desafio da Variedade: 30 vegetais por semana</h2>
+  <p>A cozinha japonesa é famosa pela variedade de pequenos ingredientes. Estudos sobre a flora intestinal sugerem que comer <b>muitos tipos diferentes de vegetais</b> na semana ajuda o intestino. Marque os que você comer:</p>
+  <div class="card"><div id="veg30"></div><p style="margin-top:12px"><b id="vegCount">0</b> de 30 esta semana</p><button class="btn ghost sm" id="vegReset">Zerar para a nova semana</button></div>
+
+  <div class="activity">
+    <div class="ah"><span style="font-size:26px">✏️</span><h3>Meu Prato Wa</h3><span class="tagx">ATIVIDADE</span></div>
+    <label class="fl">Monte o seu almoço de amanhã usando as 4 partes (caldo, vegetais, proteína, carbo):</label>
+    <textarea data-save="m4_almoco"></textarea>
+    <label class="fl">Uma troca que vou fazer esta semana (de quê → para quê):</label>
+    <textarea data-save="m4_troca"></textarea>
+    <div class="saved"></div>
+  </div>
+</section>
+
+<!-- ================= MÓDULO 05 ================= -->
+<section class="page" id="p-m05" data-mod="5">
+  <div class="mhead" data-k="献"><p class="eyebrow">🗒️ Módulo 05 · Shoku (Dieta)</p><h1>Cardápios e Lista de Compras</h1><p class="q">"Decidir antes é o que sustenta a constância."</p></div>
+  <div class="tools"><button class="btn ghost sm" data-print>🖨️ Imprimir esta página</button></div>
+
+  <p class="lead">Aqui está o seu "e agora, o que eu como?" resolvido. Dois cardápios de 7 dias, que você alterna nas 4 semanas, e uma lista de compras para marcar no mercado.</p>
+  <div class="box tip"><span class="ic">💡</span><div class="bd"><b class="t">Como usar</b><p>Semanas 1 e 3: <b>Cardápio A</b>. Semanas 2 e 4: <b>Cardápio B</b>. Quantidades: Prato Wa e regra dos 80%. Se não gostar de algo, troque por outro item da mesma parte do prato.</p></div></div>
+
+  <h2>Cardápios de 7 dias</h2>
+  <div class="msel" id="menuSel"><button class="on" data-m="A">Cardápio A</button><button data-m="B">Cardápio B</button></div>
+  <div id="menuBox"></div>
+
+  <h2>Lista de compras</h2>
+  <p>Marque o que já tem em casa e o que falta comprar. Tudo fica salvo.</p>
+  <div class="card shop" id="shopBox"></div>
+  <button class="btn ghost sm" id="shopReset" style="margin-top:10px">Desmarcar tudo</button>
+</section>
+
+<!-- ================= MÓDULO 06 ================= -->
+<section class="page" id="p-m06" data-mod="6">
+  <div class="mhead" data-k="料"><p class="eyebrow">🍲 Módulo 06 · Shoku (Dieta)</p><h1>Guia de Receitas</h1><p class="q">"26 receitas com princípios japoneses e ingredientes de mercado."</p></div>
+  <div class="tools"><button class="btn ghost sm" data-print>🖨️ Imprimir esta página</button></div>
+
+  <p class="lead">Receitas simples, em sua maioria de até 30 minutos. Toque em uma receita para ver ingredientes e preparo. Toque no 🤍 para salvar nas favoritas.</p>
+
+  <h3>❤️ Minhas favoritas</h3>
+  <div id="favBox" class="card"><p style="margin:0;color:var(--ink2)">Toque no 🤍 de qualquer receita para guardá-la aqui.</p></div>
+
+  <h3>Todas as receitas</h3>
+  <div class="filters" id="recFilters"></div>
+  <div id="recBox"></div>
+
+  <div class="box tip"><span class="ic">🧂</span><div class="bd"><b class="t">Sobre o sal e o shoyu</b><p>Os sabores das receitas vêm do gengibre, alho, cebolinha, limão e ervas. Quando houver shoyu, use pouco e prefira a versão com menos sódio. Quem tem pressão alta deve conversar com o médico sobre a quantidade.</p></div></div>
+</section>
+
+<!-- ================= MÓDULO 07 ================= -->
+<section class="page" id="p-m07" data-mod="7">
+  <div class="mhead" data-k="動"><p class="eyebrow">🌸 Módulo 07 · Undō (Movimento)</p><h1>O Ritual dos 7 Minutos</h1><p class="q">"Pouco, todo dia, com delicadeza. É assim que o músculo fica."</p></div>
+  <div class="tools"><button class="btn ghost sm" data-print>🖨️ Imprimir esta página</button></div>
+
+  <p class="lead">No Japão, milhões de pessoas fazem ginástica leve de manhã. A tradição do <i>Rajio Taisō</i> (ginástica pelo rádio) existe desde 1928 e tem poucos minutos. A ideia: movimento curto e diário, para qualquer idade.</p>
+  <p>Seguindo esse princípio, criamos o <b>Ritual dos 7 Minutos</b>: 7 movimentos suaves, 1 minuto cada, feitos em casa, sem equipamento. Foi pensado para o corpo 40+: baixo impacto, foco em <b>músculo, postura e equilíbrio</b>.</p>
+
+  <div class="box sci"><span class="ic">💪</span><div class="bd"><b class="t">Por que treino leve faz diferença depois dos 40</b><p>O músculo é o tecido que mais gasta energia em repouso e protege ossos e articulações. Movimentos de força leves, repetidos com constância, ajudam a <b>preservar</b> massa muscular nessa fase. Não é sobre transpirar, é sobre manter o motor ligado.</p></div></div>
+
+  <div class="box alert"><span class="ic">⚠️</span><div class="bd"><b class="t">Segurança em primeiro lugar</b><p>Se você tem problema cardíaco, pressão alta descontrolada, osteoporose grave, dor articular importante ou está em recuperação de cirurgia, converse com seu médico antes de começar. Pare se sentir dor, tontura ou falta de ar. Em cada movimento há uma versão mais fácil, e usá-la é válido.</p></div></div>
+
+  <h2>🎯 Faça agora: o cronômetro do ritual</h2>
+  <div class="player" id="player"></div>
+
+  <h2>Os 7 movimentos</h2>
+  <div class="ex"><div class="exh"><div class="num">1</div><div><h3>🦢 Despertar do Grou</h3><div class="meta">1 minuto · Alongamento + respiração</div></div></div>
+    <ol><li>Em pé, pés na largura dos ombros.</li><li>Inspire pelo nariz levantando os braços até acima da cabeça.</li><li>Expire pela boca descendo os braços devagar, como asas de um grou.</li><li>Repita em ritmo lento por 1 minuto, alongando a coluna.</li></ol>
+    <p><b>Para quê:</b> acorda a coluna, melhora a postura e acalma o sistema nervoso.</p><p><span class="pill g">🌸 Mais fácil: faça sentada</span></p></div>
+
+  <div class="ex"><div class="exh"><div class="num">2</div><div><h3>🪑 Sentar e Levantar</h3><div class="meta">1 minuto · Pernas e glúteos</div></div></div>
+    <ol><li>Fique de pé na frente de uma cadeira firme, pés na largura dos quadris.</li><li>Sente devagar (conte 3 segundos), tocando levemente a cadeira.</li><li>Levante empurrando o chão com os pés, sem usar as mãos se possível.</li><li>Repita em ritmo confortável por 1 minuto.</li></ol>
+    <p><b>Para quê:</b> fortalece pernas e glúteos, os maiores músculos do corpo, e é um dos movimentos mais úteis para a vida diária.</p><p><span class="pill g">🌸 Mais fácil: use as mãos nos braços da cadeira ou numa cadeira mais alta</span> <span class="pill y">🔥 Mais difícil: levante em 1 segundo e desça em 4</span></p></div>
+
+  <div class="ex"><div class="exh"><div class="num">3</div><div><h3>🧱 Flexão na Parede</h3><div class="meta">1 minuto · Peito, ombros e braços</div></div></div>
+    <ol><li>Em pé, de frente para a parede, a uma passada de distância.</li><li>Apoie as mãos na parede na altura dos ombros.</li><li>Dobre os cotovelos aproximando o peito da parede, corpo reto.</li><li>Empurre de volta devagar. Repita por 1 minuto.</li></ol>
+    <p><b>Para quê:</b> tonifica braços e peito sem pressionar punhos e ombros.</p><p><span class="pill g">🌸 Mais fácil: fique mais perto da parede</span> <span class="pill y">🔥 Mais difícil: afaste os pés ou apoie as mãos num balcão</span></p></div>
+
+  <div class="ex"><div class="exh"><div class="num">4</div><div><h3>🚶‍♀️ Marcha Taisō</h3><div class="meta">1 minuto · Coração e coordenação</div></div></div>
+    <ol><li>Marche no lugar elevando os joelhos na altura confortável.</li><li>Balance os braços de forma natural, em oposição às pernas.</li><li>Mantenha a respiração fluida: inspire 2 passos, expire 2 passos.</li></ol>
+    <p><b>Para quê:</b> eleva levemente os batimentos, aquece o corpo e trabalha equilíbrio, sem impacto nas articulações.</p><p><span class="pill g">🌸 Mais fácil: marche com passos curtos, sem elevar muito o joelho</span> <span class="pill y">🔥 Mais difícil: eleve mais os joelhos e os braços</span></p></div>
+
+  <div class="ex"><div class="exh"><div class="num">5</div><div><h3>🌉 Ponte do Quadril</h3><div class="meta">1 minuto · Glúteos e lombar</div></div></div>
+    <ol><li>Deite de costas, joelhos dobrados, pés apoiados no chão.</li><li>Braços ao lado do corpo, palmas no chão.</li><li>Empurre os calcanhares e eleve o quadril até formar uma linha do ombro ao joelho.</li><li>Aperte os glúteos por 1 segundo no alto e desça devagar.</li></ol>
+    <p><b>Para quê:</b> fortalece glúteos, posterior de coxa e lombar, e ajuda a estabilizar a pelve.</p><p><span class="pill g">🌸 Mais fácil: suba apenas até onde for confortável</span> <span class="pill y">🔥 Mais difícil: segure 3 segundos no alto</span></p></div>
+
+  <div class="ex"><div class="exh"><div class="num">6</div><div><h3>🎋 Remada do Bambu</h3><div class="meta">1 minuto · Costas e postura</div></div></div>
+    <ol><li>Pegue duas garrafas de água (500 ml ou 1,5 l, conforme sua força).</li><li>Incline o tronco levemente à frente, joelhos suaves, costas retas.</li><li>Leve os cotovelos para trás, juntando as escápulas, como puxando um remo.</li><li>Desça devagar e repita por 1 minuto.</li></ol>
+    <p><b>Para quê:</b> fortalece as costas e os ombros, corrige a postura curvada de quem passa o dia sentada.</p><p><span class="pill g">🌸 Mais fácil: garrafas vazias ou só os braços, sem peso</span> <span class="pill y">🔥 Mais difícil: garrafas mais pesadas</span></p></div>
+
+  <div class="ex"><div class="exh"><div class="num">7</div><div><h3>🦩 Equilíbrio do Grou</h3><div class="meta">1 minuto · Equilíbrio + respiração final</div></div></div>
+    <ol><li>Fique de pé perto de uma parede ou cadeira para apoio.</li><li>Transfira o peso para uma perna e levante a outra levemente.</li><li>Fique ali por 15 a 20 segundos respirando fundo. Troque de lado.</li><li>Termine com 3 respirações lentas, com as mãos no abdômen.</li></ol>
+    <p><b>Para quê:</b> o equilíbrio costuma diminuir com a idade e é um dos pilares de prevenção de quedas. Também acalma a mente no fim do ritual.</p><p><span class="pill g">🌸 Mais fácil: deixe a ponta do pé levantado tocando o chão</span> <span class="pill y">🔥 Mais difícil: feche os olhos por alguns segundos</span></p></div>
+
+  <h2>Progressão em 4 semanas</h2>
+  <div class="tw"><table>
+    <tr><th>Semana</th><th>Foco</th><th>Como fazer</th></tr>
+    <tr><td><b>1 · Reinício</b></td><td>Aprender os movimentos</td><td>Ritmo lento, versão mais fácil se precisar, 1 vez por dia</td></tr>
+    <tr><td><b>2 · Ritmo</b></td><td>Constância</td><td>Mesmo ritual, sem pausas entre os movimentos</td></tr>
+    <tr><td><b>3 · Virada</b></td><td>Mais controle</td><td>Descidas mais lentas (3 a 4 segundos) e pausas curtas no alto</td></tr>
+    <tr><td><b>4 · Nova eu</b></td><td>Desafio leve</td><td>Versões mais difíceis dos movimentos que estiverem fáceis</td></tr>
+  </table></div>
+
+  <h2>Caminhada Suave: o complemento japonês</h2>
+  <div class="grid">
+    <div class="card"><span class="em">🍽️</span><h4>Depois do almoço</h4><p>10 a 15 minutos em ritmo tranquilo. Ajuda a regular a glicose depois da refeição e a digestão.</p></div>
+    <div class="card"><span class="em">🪜</span><h4>Mais movimento no dia</h4><p>Escada em vez de elevador, descer um ponto antes, levantar a cada hora. Movimento "invisível" soma muito.</p></div>
+    <div class="card"><span class="em">🌳</span><h4>Caminhe na natureza</h4><p>No Japão existe o <i>shinrin-yoku</i> ("banho de floresta"). Caminhar em lugar verde ajuda a reduzir o estresse.</p></div>
+  </div>
+
+  <div class="activity">
+    <div class="ah"><span style="font-size:26px">✏️</span><h3>Meu teste de força</h3><span class="tagx">ATIVIDADE</span></div>
+    <p>Meça uma vez agora e outra no dia 28. Conte quantas vezes você consegue sentar e levantar de uma cadeira em <b>30 segundos</b> (sem usar as mãos, se possível).</p>
+    <div class="row2">
+      <div><label class="fl">Dia 1 (repetições)</label><input type="number" data-save="m7_d1" min="0"></div>
+      <div><label class="fl">Dia 28 (repetições)</label><input type="number" data-save="m7_d28" min="0"></div>
+    </div>
+    <label class="fl">Quando e onde vou fazer o meu ritual (horário fixo ajuda!):</label>
+    <textarea data-save="m7_quando"></textarea>
+    <div class="saved"></div>
+  </div>
+</section>
+
+<!-- ================= MÓDULO 08 ================= -->
+<section class="page" id="p-m08" data-mod="8">
+  <div class="mhead" data-k="術"><p class="eyebrow">🏡 Módulo 08 · Seikatsu (Hábitos)</p><h1>12 Truques das Japonesas</h1><p class="q">"Nada de segredos. Pequenos hábitos, repetidos todo dia."</p></div>
+  <div class="tools"><button class="btn ghost sm" data-print>🖨️ Imprimir esta página</button></div>
+
+  <p class="lead">Estes são os hábitos mais citados quando se estuda o jeito de viver japonês. Você não precisa fazer todos de uma vez: escolha 3 para a primeira semana e vá somando.</p>
+  <div class="box tip"><span class="ic">⭐</span><div class="bd"><b class="t">Dica de ouro</b><p>Marque abaixo os que você já faz e escolha 3 novos para começar. Cada truque entra no calendário de 28 dias, no momento certo.</p></div></div>
+  <div id="trucks"></div>
+
+  <h2>🫧 Exercício guiado: a Pausa Ma</h2>
+  <p><i>Ma</i> (間) é o espaço vazio entre as coisas: a pausa que dá sentido ao resto. Use este exercício quando a ansiedade apertar, antes das refeições ou antes de dormir. A respiração longa na expiração ajuda o corpo a sair do modo de alerta.</p>
+  <div class="card breath" id="breathBox"></div>
+
+  <div class="activity">
+    <div class="ah"><span style="font-size:26px">✏️</span><h3>Meus 3 truques da semana</h3><span class="tagx">ATIVIDADE</span></div>
+    <label class="fl">Os 3 truques que vou começar (escreva o número e o nome):</label>
+    <textarea data-save="m8_tres"></textarea>
+    <label class="fl">Como vou lembrar de cada um (gatilho: "depois de X, eu faço Y"):</label>
+    <textarea data-save="m8_gatilho"></textarea>
+    <div class="saved"></div>
+  </div>
+</section>
+
+<!-- ================= MÓDULO 09 ================= -->
+<section class="page" id="p-m09" data-mod="9">
+  <div class="mhead" data-k="儀"><p class="eyebrow">🛁 Módulo 09 · Seikatsu (Hábitos)</p><h1>Rituais de Pele, Chá e Banho</h1><p class="q">"Cuidar de si é uma cerimônia diária, não um luxo."</p></div>
+  <div class="tools"><button class="btn ghost sm" data-print>🖨️ Imprimir esta página</button></div>
+
+  <p class="lead">A fama de pele jovem das japonesas vem de uma combinação: <b>proteção solar todos os dias</b>, limpeza suave, hidratação em camadas e um ritual noturno de desaceleração. É simples e barato.</p>
+
+  <div class="box sci"><span class="ic">☀️</span><div class="bd"><b class="t">O truque mais poderoso</b><p>A maior parte do envelhecimento visível da pele vem da exposição ao sol ao longo dos anos. Por isso, protetor solar de uso diário (FPS 30 ou mais), chapéu e sombra são os "segredos" mais eficientes, e custam menos do que qualquer creme caro.</p></div></div>
+
+  <h2>🌅 Rotina da manhã (3 passos, 3 minutos)</h2>
+  <div class="tw"><table>
+    <tr><th>Passo</th><th>O que fazer</th><th>Dica</th></tr>
+    <tr><td>1 · Limpar</td><td>Lavar o rosto com água morna e sabonete suave (ou só água, se a pele for seca)</td><td>Sem esfregar</td></tr>
+    <tr><td>2 · Hidratar</td><td>Loção ou gel hidratante leve, com batidinhas nas mãos</td><td>Pescoço também</td></tr>
+    <tr><td>3 · Proteger</td><td>Protetor solar no rosto, pescoço, orelhas e mãos</td><td>Reaplicar se for ficar ao sol por horas</td></tr>
+  </table></div>
+
+  <h2>🌙 Rotina da noite (4 passos, 5 minutos)</h2>
+  <div class="tw"><table>
+    <tr><th>Passo</th><th>O que fazer</th><th>Dica</th></tr>
+    <tr><td>1 · Retirar</td><td>Óleo ou bálsamo de limpeza para remover protetor e maquiagem</td><td>Massagear por 1 minuto</td></tr>
+    <tr><td>2 · Limpar</td><td>Sabonete suave, depois enxágue com água morna (a "dupla limpeza")</td><td>Toalha limpa, sem esfregar</td></tr>
+    <tr><td>3 · Hidratar</td><td>Loção hidratante, depois creme (hidratação em camadas)</td><td>Aplique com a pele ainda levemente úmida</td></tr>
+    <tr><td>4 · Cuidar</td><td>Pescoço, mãos e contorno dos olhos</td><td>Movimentos para cima</td></tr>
+  </table></div>
+  <div class="box tip"><span class="ic">🧴</span><div class="bd"><b class="t">Sobre produtos com ativos</b><p>Vitamina C, retinoides e ácidos podem ajudar, mas dependem do seu tipo de pele. Introduza um de cada vez e converse com um dermatologista, principalmente se tiver pele sensível, usar medicamentos ou estiver em tratamento.</p></div></div>
+
+  <h2>💆‍♀️ Massagem facial de 3 minutos</h2>
+  <ol>
+    <li>Com as mãos limpas e um pouco de creme, comece na testa: deslize do centro para as têmporas.</li>
+    <li>Nas bochechas, faça movimentos do nariz para as orelhas.</li>
+    <li>Na linha do maxilar, deslize do queixo até as orelhas.</li>
+    <li>No pescoço, movimentos suaves de baixo para cima.</li>
+    <li>Termine com 3 respirações profundas.</li>
+  </ol>
+  <p>Estimula a circulação e dá um momento de pausa. Pressão sempre leve.</p>
+
+  <h2>🍵 O Guia dos Chás</h2>
+  <div class="tw"><table>
+    <tr><th>Chá</th><th>Quando</th><th>O que oferece</th></tr>
+    <tr><td>🍃 <b>Chá verde</b></td><td>Manhã e início da tarde (tem cafeína)</td><td>Antioxidantes; substitui bebida açucarada. O efeito no metabolismo é pequeno, o valor está no hábito</td></tr>
+    <tr><td>🌾 <b>Chá de cevada (mugicha)</b></td><td>Tarde, gelado ou quente (sem cafeína)</td><td>Sabor tostado, sem cafeína, ótimo para o calor</td></tr>
+    <tr><td>🫚 <b>Gengibre com limão</b></td><td>Antes das refeições ou ao acordar</td><td>Aquece, estimula a digestão</td></tr>
+    <tr><td>🌼 <b>Camomila</b></td><td>Noite</td><td>Ajuda no relaxamento</td></tr>
+    <tr><td>🌿 <b>Capim-cidreira</b></td><td>Noite</td><td>Sabor suave, ritual calmante</td></tr>
+    <tr><td>🌱 <b>Erva-doce</b></td><td>Depois do jantar</td><td>Tradicionalmente usada para conforto digestivo</td></tr>
+  </table></div>
+  <div class="box alert"><span class="ic">⚠️</span><div class="bd"><b class="t">Cuidados</b><p>Chás também têm contraindicações: se você usa medicamentos (principalmente anticoagulantes, para pressão ou tireoide), está grávida ou amamentando, pergunte ao médico antes de usar chá de forma frequente. Cafeína só até o início da tarde.</p></div></div>
+
+  <h2>🛁 O ritual do Ofurô (banho noturno)</h2>
+  <p>No Japão, o banho de imersão quente no fim do dia é um ritual de relaxamento. O aquecimento do corpo seguido do esfriamento natural ajuda a dar sono. Sem banheira, o chuveiro morno + escalda-pés funcionam muito bem.</p>
+  <ol>
+    <li><b>1 a 2 horas antes de dormir</b>, tome banho morno (38 a 40 °C), por 10 a 15 minutos.</li>
+    <li>Luz baixa, sem celular. Se puder, escute música suave.</li>
+    <li>Respire fundo e solte os ombros. Faça a massagem facial depois do banho.</li>
+    <li>Saia do banho, vista roupa confortável e siga a rotina noturna da pele.</li>
+  </ol>
+  <div class="box alert"><span class="ic">⚠️</span><div class="bd"><b class="t">Cuidado</b><p>Água muito quente não é o objetivo. Evite se tem pressão baixa, problemas cardíacos, está grávida ou se sente tontura. Na dúvida, escolha água morna.</p></div></div>
+
+  <h2>🌙 Ritual Noturno de 30 minutos</h2>
+  <div class="tw"><table>
+    <tr><th>Horário</th><th>Ação</th></tr>
+    <tr><td>21h00</td><td>Cozinha fechada. Última bebida: chá sem cafeína</td></tr>
+    <tr><td>21h15</td><td>Telas em modo noturno ou desligadas</td></tr>
+    <tr><td>21h30</td><td>Banho morno (ofurô)</td></tr>
+    <tr><td>21h50</td><td>Rotina de pele da noite</td></tr>
+    <tr><td>22h00</td><td>Diário de vitórias + 3 respirações Ma</td></tr>
+    <tr><td>22h15</td><td>Quarto escuro e fresco. Dormir</td></tr>
+  </table></div>
+  <p><i>Ajuste os horários à sua rotina. O que importa é a sequência repetida todos os dias.</i></p>
+
+  <div class="activity">
+    <div class="ah"><span style="font-size:26px">✏️</span><h3>Meu ritual de cuidado</h3><span class="tagx">ATIVIDADE</span></div>
+    <label class="fl">Que produtos de pele eu já tenho e o que falta (protetor solar, hidratante, sabonete suave)?</label>
+    <textarea data-save="m9_produtos"></textarea>
+    <label class="fl">Meu horário de ritual noturno (do banho ao travesseiro):</label>
+    <textarea data-save="m9_ritual"></textarea>
+    <div class="saved"></div>
+  </div>
+</section>
+
+<!-- ================= MÓDULO 10 ================= -->
+<section class="page" id="p-m10" data-mod="10">
+  <div class="mhead" data-k="季"><p class="eyebrow">🌡️ Módulo 10 · Seikatsu (Hábitos)</p><h1>Guia dos Sintomas da Transição</h1><p class="q">"Entender o que sente é o primeiro passo para cuidar melhor."</p></div>
+  <div class="tools"><button class="btn ghost sm" data-print>🖨️ Imprimir esta página</button></div>
+
+  <p class="lead">A transição hormonal é diferente para cada mulher. Algumas quase não sentem, outras sentem muito. Este guia traz <b>hábitos de apoio</b> para os sintomas mais comuns e quando vale procurar ajuda médica.</p>
+  <div class="box alert"><span class="ic">🩺</span><div class="bd"><b class="t">Importante</b><p>Os hábitos abaixo são medidas de apoio e podem aliviar o desconforto em algumas mulheres, mas não substituem avaliação médica. Sintomas intensos merecem conversa com ginecologista ou endocrinologista, que podem avaliar tratamentos adequados ao seu caso.</p></div></div>
+
+  <div class="tw"><table>
+    <tr><th>Sintoma</th><th>Hábitos de apoio</th><th>Procure ajuda se</th></tr>
+    <tr><td>🔥 <b>Ondas de calor</b></td><td>Roupas em camadas e tecidos leves; quarto fresco; reduzir álcool, cafeína e comidas muito apimentadas à noite; respiração lenta quando a onda começar; chá gelado e água ao longo do dia</td><td>Forem frequentes, intensas ou atrapalharem sono e trabalho</td></tr>
+    <tr><td>🌙 <b>Insônia e suor noturno</b></td><td>Horário fixo de dormir; ofurô morno; telas desligadas antes de dormir; quarto escuro e fresco; evitar cafeína depois das 15h; jantar leve até 3h antes</td><td>Dormir mal persistir por semanas ou houver cansaço intenso de dia</td></tr>
+    <tr><td>💧 <b>Inchaço e retenção</b></td><td>Menos ultraprocessados e sal; mais água; potássio de frutas e vegetais; caminhada leve; pernas para cima no fim do dia</td><td>Inchaço for só de um lado, súbito ou com dor</td></tr>
+    <tr><td>😟 <b>Humor e ansiedade</b></td><td>Pausas Ma; sol da manhã; caminhada na natureza; sono regular; conversar com amigas; diário de vitórias</td><td>Tristeza ou ansiedade forem persistentes ou intensas. Isso merece cuidado profissional</td></tr>
+    <tr><td>⚡ <b>Cansaço e baixa energia</b></td><td>Proteína no café da manhã; ritual de 7 minutos; sono; hidratação; refeições regulares</td><td>Cansaço persistir apesar de dormir bem (vale pedir exames)</td></tr>
+    <tr><td>🦴 <b>Dores e rigidez nas articulações</b></td><td>Movimento suave diário; alongamento; peixes e vegetais coloridos; peso corporal em equilíbrio</td><td>Houver dor forte, inchaço ou limitação de movimento</td></tr>
+    <tr><td>🌫️ <b>"Névoa mental" e esquecimento</b></td><td>Sono; movimento; pausas; anotar tarefas; reduzir multitarefa</td><td>As falhas de memória atrapalharem o dia a dia</td></tr>
+    <tr><td>🌸 <b>Pele e mucosas mais secas</b></td><td>Hidratação em camadas; protetor solar; banho morno (não quente); beber água</td><td>Houver desconforto íntimo ou na vida sexual: o ginecologista tem opções seguras. Não é tabu</td></tr>
+    <tr><td>🍽️ <b>Mais fome, mais barriga</b></td><td>Prato Wa; proteína em cada refeição; ritual de 7 minutos; sono; reduzir álcool</td><td>Houver ganho de peso rápido e inexplicado (tireoide, glicemia)</td></tr>
+  </table></div>
+
+  <h2>Sinais de alerta: procure atendimento</h2>
+  <ul>
+    <li>Sangramento muito intenso, com coágulos, ou depois de 12 meses sem menstruar</li>
+    <li>Dor no peito, falta de ar ou palpitações</li>
+    <li>Pensamentos de se machucar (procure ajuda imediatamente: no Brasil, o CVV atende pelo 188, 24 horas)</li>
+    <li>Caroço na mama ou mudanças que preocupem</li>
+  </ul>
+
+  <h2>Perguntas para levar ao médico</h2>
+  <div class="activity">
+    <div class="ah"><span style="font-size:26px">✏️</span><h3>Minha lista para a consulta</h3><span class="tagx">ATIVIDADE</span></div>
+    <label class="fl">Sintomas que mais me incomodam hoje (e há quanto tempo):</label>
+    <textarea data-save="m10_sint"></textarea>
+    <label class="fl">Perguntas que quero fazer (exames, opções de tratamento, meus riscos):</label>
+    <textarea data-save="m10_perg"></textarea>
+    <div class="saved"></div>
+  </div>
+</section>
+
+<!-- ================= MÓDULO 11 ================= -->
+<section class="page" id="p-m11" data-mod="11">
+  <div class="mhead" data-k="測"><p class="eyebrow">📏 Módulo 11 · Acompanhamento</p><h1>Medidas e Rotina</h1><p class="q">"A balança conta uma parte da história. Vamos olhar a história inteira."</p></div>
+  <div class="tools"><button class="btn ghost sm" data-print>🖨️ Imprimir esta página</button></div>
+
+  <p class="lead">O peso muda por retenção de líquido, ciclo, horário e sal. Depois dos 40, isso fica ainda mais evidente. Por isso você vai acompanhar o <b>conjunto</b>: medidas, energia, sono, roupa e como se sente.</p>
+
+  <div class="grid">
+    <div class="card"><span class="em">📐</span><h4>Fita métrica</h4><p>Cintura (na altura do umbigo) e quadril (parte mais larga). Uma vez por semana, no mesmo horário.</p></div>
+    <div class="card"><span class="em">👖</span><h4>A calça-teste</h4><p>Escolha uma peça de referência e experimente 1 vez por semana. A calça mostra o que o espelho esconde.</p></div>
+    <div class="card"><span class="em">📸</span><h4>Foto semanal</h4><p>Mesma luz, mesma roupa, mesmo ângulo. Só você vê. Compare no dia 28.</p></div>
+    <div class="card"><span class="em">⚡</span><h4>Energia e sono</h4><p>De 1 a 10. A energia e o sono costumam melhorar antes de qualquer medida.</p></div>
+  </div>
+
+  <div class="box sci"><span class="ic">🩺</span><div class="bd"><b class="t">Importante</b><p>Meça a si mesma com gentileza. O objetivo não é chegar a um número, é <b>perceber a tendência</b>. Se você tem histórico de transtorno alimentar, prefira acompanhar só energia, sono e como se sente.</p></div></div>
+
+  <h2>Medidas com a mão</h2>
+  <div class="tw"><table>
+    <tr><th>Porção</th><th>Referência</th><th>Equivale a</th></tr>
+    <tr><td>Carboidrato</td><td>Punho fechado</td><td>~ 1 concha rasa de arroz</td></tr>
+    <tr><td>Proteína</td><td>Palma da mão (sem dedos)</td><td>~ 100 a 120 g cozido</td></tr>
+    <tr><td>Gordura boa</td><td>Ponta do polegar</td><td>~ 1 colher de sopa de azeite</td></tr>
+    <tr><td>Vegetais</td><td>Duas mãos juntas</td><td>Sem limite, metade do prato</td></tr>
+    <tr><td>Castanhas</td><td>Uma mão fechada</td><td>~ 30 g</td></tr>
+    <tr><td>Iogurte natural</td><td>1 pote individual</td><td>~ 150 g</td></tr>
+  </table></div>
+
+  <h2>📊 Meu painel de 4 semanas</h2>
+  <p>Preencha a semana e veja a evolução no gráfico. Pode deixar campos em branco.</p>
+  <div class="card" id="trackBox"></div>
+  <div class="card" style="margin-top:16px"><h4>Evolução</h4><div id="trackChart"></div></div>
+
+  <div class="activity">
+    <div class="ah"><span style="font-size:26px">✏️</span><h3>Registro inicial</h3><span class="tagx">ATIVIDADE</span></div>
+    <label class="fl">Como está a minha calça-teste hoje?</label>
+    <textarea data-save="m11_calca"></textarea>
+    <label class="fl">Como eu me sinto hoje, honestamente?</label>
+    <textarea data-save="m11_sinto"></textarea>
+    <div class="saved"></div>
+  </div>
+</section>
+
+<!-- ================= MÓDULO 12 ================= -->
+<section class="page" id="p-m12" data-mod="12">
+  <div class="mhead" data-k="暦"><p class="eyebrow">🗓️ Módulo 12 · Acompanhamento</p><h1>Calendário Gamificado de 28 Dias</h1><p class="q">"28 dias. Um pequeno ajuste por dia. Uma nova versão de você."</p></div>
+  <div class="tools"><button class="btn ghost sm" data-print>🖨️ Imprimir esta página</button></div>
+
+  <p class="lead">Cada dia tem <b>3 microtarefas</b>: uma de Shoku, uma de Undō (o ritual de 7 minutos) e uma de Seikatsu. Marque cada uma. Quando completar as três, o dia fica verde.</p>
+  <div class="box tip"><span class="ic">🏆</span><div class="bd"><b class="t">Regras do jogo</b><p>Apareça. Faça o mínimo. Marque o dia. Se perder um dia, retome no seguinte. <b>Dia perdido não zera nada.</b> Emblemas desbloqueiam nos dias 7, 14, 21 e 28.</p></div></div>
+
+  <div id="calBox"></div>
+</section>
+
+<!-- ================= MÓDULO 13 ================= -->
+<section class="page" id="p-m13" data-mod="13">
+  <div class="mhead" data-k="心"><p class="eyebrow">🧰 Módulo 13 · Mente e Identidade</p><h1>Ferramentas de Coaching</h1><p class="q">"O corpo muda quando a mente abre espaço para isso."</p></div>
+  <div class="tools"><button class="btn ghost sm" data-print>🖨️ Imprimir esta página</button></div>
+
+  <p class="lead">Aqui você trabalha de dentro para fora. São 7 ferramentas práticas, usadas em coaching e psicologia comportamental, adaptadas ao método. Tudo o que você escreve fica salvo.</p>
+
+  <h2>🌉 Ferramenta 1 · Ponte para o Futuro</h2>
+  <p>Visualizar com detalhes ajuda o cérebro a tratar o futuro como um destino concreto. Feche os olhos por 2 minutos e imagine você daqui a 90 dias. Depois responda:</p>
+  <div class="activity">
+    <label class="fl">1. Como eu acordo e como me sinto?</label><textarea data-save="t1_1"></textarea>
+    <label class="fl">2. O que estou vestindo que hoje eu evitaria?</label><textarea data-save="t1_2"></textarea>
+    <label class="fl">3. O que alguém próximo notou em mim?</label><textarea data-save="t1_3"></textarea>
+    <label class="fl">4. Como me sinto quando passo pelo espelho?</label><textarea data-save="t1_4"></textarea>
+    <label class="fl">5. Qual foi a primeira decisão que mudou tudo?</label><textarea data-save="t1_5"></textarea>
+    <label class="fl">6. Que conselho eu daria para a mulher de hoje?</label><textarea data-save="t1_6"></textarea>
+    <div class="saved"></div>
+  </div>
+
+  <h2>🎯 Ferramenta 2 · Roda da Vida Adaptada</h2>
+  <p>Dê uma nota de 0 a 10 para cada área e veja o formato da sua roda. A área mais baixa é onde começar.</p>
+  <div class="card" id="wheelBox"></div>
+  <div class="activity" style="margin-top:16px">
+    <label class="fl">Minha área com menor nota é... e o que mudaria se ela fosse um 8?</label><textarea data-save="t2_nota"></textarea>
+    <div class="saved"></div>
+  </div>
+
+  <h2>✅ Ferramenta 3 · Check-in Semanal</h2>
+  <p>O que não é medido não melhora. Faça uma vez por semana (ao final de cada semana do calendário).</p>
+  <div id="checkins"></div>
+
+  <h2>🔄 Ferramenta 4 · Reprogramação de Crenças</h2>
+  <p>Crenças são pensamentos repetidos tantas vezes que parecem verdades. A maioria são histórias, e histórias podem ser reescritas.</p>
+  <div class="activity">
+    <label class="fl">Minha crença limitante (ex.: "Depois dos 40 não adianta mais"):</label><textarea data-save="t4_1"></textarea>
+    <label class="fl">3 situações em que ela parece verdadeira:</label><textarea data-save="t4_2"></textarea>
+    <label class="fl">Isso é absolutamente verdade? O que mudaria se eu não acreditasse nisso?</label><textarea data-save="t4_3"></textarea>
+    <label class="fl">A crença invertida (ex.: "Meu corpo responde a cuidado em qualquer idade"):</label><textarea data-save="t4_4"></textarea>
+    <label class="fl">3 evidências, mesmo pequenas, de que a versão invertida é verdadeira:</label><textarea data-save="t4_5"></textarea>
+    <div class="saved"></div>
+  </div>
+
+  <h2>🏆 Ferramenta 5 · Diário de Vitórias</h2>
+  <p>O cérebro registra mais o que deu errado. O diário treina o olhar para o que deu certo. Faça por 3 minutos, à noite, durante os 28 dias.</p>
+  <div class="activity">
+    <label class="fl">⚡ Vitória do corpo (algo que meu corpo fez ou senti bem hoje):</label><input type="text" id="dv1">
+    <label class="fl">🧠 Vitória da mente (um pensamento mais gentil que tive):</label><input type="text" id="dv2">
+    <label class="fl">🌟 Vitória invisível (algo pequeno que só eu sei):</label><input type="text" id="dv3">
+    <p style="margin-top:14px"><button class="btn sm" id="dvSave">Salvar a vitória de hoje</button></p>
+    <div id="diary"></div>
+  </div>
+
+  <h2>🎯 Ferramenta 6 · Plano Se/Então</h2>
+  <p>A hora de decidir o que fazer quando a vontade apertar não é no momento da vontade. É agora, com calma.</p>
+  <div class="activity">
+    <label class="fl">SE eu sentir vontade de comer fora do protocolo à noite... ENTÃO:</label><textarea data-save="t6_1"></textarea>
+    <label class="fl">SE eu pular um dia do protocolo... ENTÃO no dia seguinte:</label><textarea data-save="t6_2"></textarea>
+    <label class="fl">SE eu estiver desanimada e quiser desistir... ENTÃO:</label><textarea data-save="t6_3"></textarea>
+    <label class="fl">SE eu não tiver tempo para os 7 minutos... ENTÃO farei pelo menos:</label><textarea data-save="t6_4"></textarea>
+    <label class="fl">SE eu tiver uma onda de calor ou noite mal dormida... ENTÃO:</label><textarea data-save="t6_5"></textarea>
+    <label class="fl">Minha âncora secreta (o meu porquê mais profundo):</label><textarea data-save="t6_6"></textarea>
+    <div class="saved"></div>
+  </div>
+
+  <h2>🌅 Ferramenta 7 · Ikigai e Kaizen</h2>
+  <p><b>Ikigai</b> é a palavra japonesa para "razão de viver". <b>Kaizen</b> é o princípio do pequeno passo diário. Juntos: saber para onde vai e dar um passo de 1% hoje.</p>
+  <div class="activity">
+    <label class="fl">❤️ O que eu amo fazer (e perco a noção do tempo):</label><textarea data-save="t7_1"></textarea>
+    <label class="fl">⭐ No que eu sou boa:</label><textarea data-save="t7_2"></textarea>
+    <label class="fl">🌍 O que as pessoas ao meu redor precisam de mim:</label><textarea data-save="t7_3"></textarea>
+    <label class="fl">🌱 O que me mantém viva, saudável e inteira:</label><textarea data-save="t7_4"></textarea>
+    <label class="fl">Meu Kaizen de hoje (um passo de 1%, de 2 minutos):</label><textarea data-save="t7_5"></textarea>
+    <div class="saved"></div>
+  </div>
+</section>
+
+<!-- ================= MÓDULO 14 ================= -->
+<section class="page" id="p-m14" data-mod="14">
+  <div class="mhead" data-k="診"><p class="eyebrow">🧪 Módulo 14 · Mente e Identidade</p><h1>Testes de Perfil</h1><p class="q">"Não existe protocolo universal. Existe o protocolo que combina com você."</p></div>
+  <div class="tools"><button class="btn ghost sm" data-print>🖨️ Imprimir esta página</button></div>
+
+  <p class="lead">Três testes rápidos (8 perguntas cada) mostram como seu corpo e sua mente funcionam, e como ajustar o protocolo para você. Responda com o que é verdade <b>hoje</b>, não com o que você gostaria que fosse.</p>
+  <div class="box sci"><span class="ic">ℹ️</span><div class="bd"><b class="t">Sobre os testes</b><p>São ferramentas de autoconhecimento, não diagnósticos. Servem para personalizar hábitos.</p></div></div>
+  <div id="quizBox"></div>
+</section>
+
+<!-- ================= MÓDULO 15 ================= -->
+<section class="page" id="p-m15" data-mod="15">
+  <div class="mhead" data-k="美"><p class="eyebrow">💃 Módulo 15 · Estilo e Identidade</p><h1>Estilo, Autoestima e Wabi-Sabi</h1><p class="q">"Você não precisa esperar o corpo ideal para se sentir bonita hoje."</p></div>
+  <div class="tools"><button class="btn ghost sm" data-print>🖨️ Imprimir esta página</button></div>
+
+  <p class="lead">Este módulo existe porque se sentir bem com a própria imagem faz parte do protocolo. Quando você se cuida e se vê bem, a motivação aumenta e a constância fica mais fácil.</p>
+
+  <div class="box tip"><span class="ic">🍂</span><div class="bd"><b class="t">Wabi-sabi: a beleza do tempo</b><p>Na cultura japonesa, <i>wabi-sabi</i> é enxergar beleza no que é imperfeito, simples e marcado pelo tempo. Uma xícara de cerâmica com uma rachadura consertada vale mais, não menos. Aos 40, 50, 60, você não está "perdendo" algo: está ganhando história, presença e estilo próprio.</p></div></div>
+
+  <h2>Dress code que valoriza você agora</h2>
+  <div class="grid">
+    <div class="card"><span class="em">✂️</span><h4>01 · O corte certo</h4><p>Roupas que acompanham o corpo, sem apertar nem "esconder". Cintura levemente marcada cria proporção. Peça larga demais costuma aumentar, não disfarçar.</p></div>
+    <div class="card"><span class="em">3️⃣</span><h4>02 · Regra das 3 peças</h4><p>Monte looks com 3 peças que combinam. É a elegância japonesa: simples e bem escolhido.</p></div>
+    <div class="card"><span class="em">🎨</span><h4>03 · Cores com intenção</h4><p>Neutros (nude, off-white, caramelo, azul-marinho, preto) como base, e uma cor viva perto do rosto, num lenço ou no batom.</p></div>
+    <div class="card"><span class="em">💍</span><h4>04 · Um acessório com personalidade</h4><p>Brinco, colar, lenço ou bolsa que você ama. Não precisa ser caro, precisa ser intencional.</p></div>
+    <div class="card"><span class="em">🧥</span><h4>05 · A peça-coringa</h4><p>Uma peça de boa qualidade que cai perfeitamente: calça, blazer, camisa. Ela muda como você entra num lugar.</p></div>
+    <div class="card"><span class="em">🧹</span><h4>06 · Danshari (desapegar)</h4><p>Separe o que não serve mais, não combina ou lembra um corpo que você não tem. Fique com o que faz você se sentir bem agora.</p></div>
+  </div>
+
+  <h2>Postura: o truque grátis</h2>
+  <p>Ombros levemente para trás e para baixo, queixo paralelo ao chão, pescoço longo, como se um fio puxasse o topo da cabeça. Parece pouco, mas muda a coluna, a respiração e a foto. Faça o <b>Despertar do Grou</b> (módulo 07) para lembrar.</p>
+
+  <h2>Fotografia: como se ver com carinho</h2>
+  <div class="grid">
+    <div class="card"><h4>📐 Altura</h4><p>Câmera na altura dos olhos ou um pouco acima. Câmera baixa distorce e alonga o queixo.</p></div>
+    <div class="card"><h4>🔄 Ângulo ¾</h4><p>Gire levemente o corpo, ombros em diagonal. Peso no pé de trás.</p></div>
+    <div class="card"><h4>☀️ Luz lateral</h4><p>Perto de uma janela, de lado. Luz suave valoriza a pele. Luz de cima cria sombras duras.</p></div>
+    <div class="card"><h4>😊 Sorriso real</h4><p>Pense em algo bom antes do clique. O olhar sorri junto.</p></div>
+  </div>
+
+  <div class="activity">
+    <div class="ah"><span style="font-size:26px">✏️</span><h3>Meu ritual de autoestima</h3><span class="tagx">ATIVIDADE</span></div>
+    <label class="fl">Uma peça que me faz sentir bem e que vou usar mais esta semana:</label><textarea data-save="m15_peca"></textarea>
+    <label class="fl">Um ritual de autocuidado de 10 minutos que vou começar:</label><textarea data-save="m15_ritual"></textarea>
+    <label class="fl">Desafio da foto: tire uma foto (câmera alta, luz lateral, sem filtro) e escreva uma coisa bonita que você vê:</label><textarea data-save="m15_foto"></textarea>
+    <div class="saved"></div>
+  </div>
+</section>
+
+<!-- ================= MÓDULO 16 ================= -->
+<section class="page" id="p-m16" data-mod="16">
+  <div class="mhead" data-k="結"><p class="eyebrow">🌟 Módulo 16 · Fechamento</p><h1>Sua Nova Identidade</h1><p class="q">"Você não precisa ser perfeita. Precisa ser constante."</p></div>
+  <div class="tools"><button class="btn ghost sm" data-print>🖨️ Imprimir esta página</button></div>
+
+  <p class="lead">Você chegou até aqui. Isso diz muito sobre quem você é.</p>
+  <p>Você não é a mulher que desistiu. É a mulher que leu, se questionou, escreveu, tentou. E intenção com ação é tudo de que você precisa.</p>
+
+  <div class="box act"><span class="ic">🔑</span><div class="bd"><b class="t">Os 3 princípios que ficam</b>
+    <p><b>1 · O seu corpo mudou as regras, e você aprendeu as novas.</b> Músculo, prato, sono e estresse respondem a hábitos.</p>
+    <p><b>2 · Harmonia vale mais que perfeição.</b> Comer, mover e viver trabalham juntos.</p>
+    <p><b>3 · Um pequeno passo por dia.</b> Kaizen: 1% melhor, todo dia, vence qualquer plano heroico que dura 3 dias.</p></div></div>
+
+  <h2>Futuro sem mudar × Futuro com o Método Wa</h2>
+  <div class="grid">
+    <div class="card" style="background:var(--rose-l)"><h4>😔 Daqui a 1 ano, sem mudar</h4><p>Mesma fome sem explicação, mesmo cansaço, a mesma conversa dura com o espelho, sono ruim e a sensação de que o corpo "não responde mais".</p></div>
+    <div class="card" style="background:var(--sage-l)"><h4>🌸 Daqui a 1 ano, com o Método Wa</h4><p>Rotina leve que você já faz sem pensar, mais disposição, sono mais tranquilo, roupas que voltam a servir e uma relação mais gentil com o seu corpo.</p></div>
+  </div>
+
+  <h2>Depois dos 28 dias: plano de manutenção</h2>
+  <div class="tw"><table>
+    <tr><th>Hábito mínimo</th><th>Frequência</th></tr>
+    <tr><td>🍚 Prato Wa no almoço + regra dos 80%</td><td>Todos os dias</td></tr>
+    <tr><td>🌸 Ritual dos 7 minutos</td><td>5 dias por semana</td></tr>
+    <tr><td>🚶‍♀️ Caminhada suave pós-refeição</td><td>3 a 5 dias por semana</td></tr>
+    <tr><td>🛁 Ritual noturno (ofurô + pele)</td><td>Todos os dias</td></tr>
+    <tr><td>📏 Check-in de medidas e energia</td><td>1 vez por mês</td></tr>
+    <tr><td>🍲 Uma receita nova do guia</td><td>1 vez por semana</td></tr>
+  </table></div>
+  <p>Sempre que escorregar, volte ao mínimo. O método não pune, ele recomeça com você.</p>
+
+  <div class="activity">
+    <div class="ah"><span style="font-size:26px">✍️</span><h3>Carta de Compromisso</h3><span class="tagx">ÚLTIMO PASSO</span></div>
+    <label class="fl">Complete: "Eu me comprometo a..."</label><textarea data-save="m16_comp"></textarea>
+    <label class="fl">Daqui a 28 dias, quando eu olhar para trás, quero sentir:</label><textarea data-save="m16_sentir"></textarea>
+    <div class="saved"></div>
+  </div>
+
+  <h2>🏅 Seu Certificado</h2>
+  <div id="certBox"></div>
+
+  <p class="footnote">Protocolo das Japonesas · Método Wa · Todos os direitos reservados.<br>Este material é de uso pessoal, tem caráter educativo e não substitui orientação médica, nutricional ou psicológica. Consulte profissionais de saúde antes de mudar sua rotina, especialmente se tiver condições de saúde ou usar medicamentos.</p>
+</section>
+
+</main>
+<script>
+/* ================= DADOS ================= */
+const NAV=[
+ {g:"Início",items:[["p-capa","🌸","Capa e Boas-vindas"],["p-indice","📋","Índice Completo"],["p-print","🖨️","Páginas Imprimíveis"]]},
+ {g:"Fundação",items:[["p-m01","🌿","01 · Reinício Mental"],["p-m02","🧠","02 · O Corpo Depois dos 40"],["p-m03","⚡","03 · O Método Wa"]]},
+ {g:"Shoku · Dieta",items:[["p-m04","🍚","04 · O Prato Wa"],["p-m05","🗒️","05 · Cardápios e Compras"],["p-m06","🍲","06 · Guia de 26 Receitas"]]},
+ {g:"Undō · Movimento",items:[["p-m07","🌸","07 · Ritual dos 7 Minutos"]]},
+ {g:"Seikatsu · Hábitos",items:[["p-m08","🏡","08 · 12 Truques das Japonesas"],["p-m09","🛁","09 · Pele, Chá e Banho"],["p-m10","🌡️","10 · Sintomas da Transição"]]},
+ {g:"Acompanhamento",items:[["p-m11","📏","11 · Medidas e Rotina"],["p-m12","🗓️","12 · Calendário 28 Dias"]]},
+ {g:"Mente e Identidade",items:[["p-m13","🧰","13 · Ferramentas de Coaching"],["p-m14","🧪","14 · Testes de Perfil"],["p-m15","💃","15 · Estilo e Wabi-Sabi"]]},
+ {g:"Fechamento",items:[["p-m16","🌟","16 · Nova Identidade"]]}
+];
+const PRINTS=[
+ ["🌿","Carta para Você Mesma","Reconheça o que admira no seu corpo hoje e declare o seu porquê.","p-m01","M01"],
+ ["🧠","Diagnóstico Honesto","Mapeie os sinais do seu corpo e a primeira mudança.","p-m02","M02"],
+ ["⚡","Plano dos 3 Pilares","Defina sua ação semanal em Shoku, Undō e Seikatsu.","p-m03","M03"],
+ ["🍚","Meu Prato Wa","Monte o almoço de amanhã e a troca da semana.","p-m04","M04"],
+ ["🗒️","Cardápios e Lista de Compras","Cardápios de 7 dias e lista para marcar no mercado.","p-m05","M05"],
+ ["🍲","Receitas Favoritas","Salve e consulte suas receitas preferidas.","p-m06","M06"],
+ ["🌸","Meu Teste de Força","Sentar e levantar: dia 1 e dia 28.","p-m07","M07"],
+ ["🏡","Meus 3 Truques da Semana","Escolha e ancore seus 3 hábitos.","p-m08","M08"],
+ ["🛁","Meu Ritual de Cuidado","Produtos de pele e ritual noturno.","p-m09","M09"],
+ ["🩺","Lista para a Consulta","Sintomas e perguntas para levar ao médico.","p-m10","M10"],
+ ["📏","Painel de Medidas","Cintura, quadril, energia e sono em 4 semanas.","p-m11","M11"],
+ ["🗓️","Calendário 28 Dias","Marque cada dia e celebre os marcos.","p-m12","M12"],
+ ["🧰","7 Ferramentas de Coaching","Ponte, Roda da Vida, Check-in, Crenças, Diário, Se/Então e Ikigai.","p-m13","M13"],
+ ["🧪","3 Testes de Perfil","Perfil metabólico, gatilho de fome e símbolo japonês.","p-m14","M14"],
+ ["💃","Ritual de Autoestima","A peça, o ritual e o desafio da foto.","p-m15","M15"],
+ ["✍️","Carta de Compromisso e Certificado","Seu compromisso e o certificado final.","p-m16","M16"]
+];
+const SIGNS1=["Sinto que o metabolismo desacelerou","Engordo na barriga mesmo comendo como antes","Acordo cansada, mesmo dormindo","Tenho mais ansiedade ou irritação","Sinto calores ou suor noturno","Estou com pouca vontade de me exercitar","Tenho vontade de doce no fim do dia","Minhas roupas pararam de servir","Estou me comparando com a mulher que eu era","Sinto que nenhuma dieta funciona mais"];
+const SIGNS2=[
+ "Ganho de peso ou barriga que antes não tinha","Cansaço frequente ou pouca energia","Sono leve, despertares noturnos ou insônia","Ondas de calor ou suor noturno","Ciclo irregular (ou já parou de menstruar)","Mais fome ou mais vontade de doce","Irritação, ansiedade ou humor oscilante","Dores ou rigidez nas articulações","Inchaço e retenção de líquido","Pele e cabelos mais secos","Queda de disposição para me movimentar","Sinto menos força muscular do que antes"
+];
+const VEG30=["Couve","Brócolis","Agrião","Espinafre","Alface","Rúcula","Repolho","Couve-flor","Abobrinha","Berinjela","Cenoura","Beterraba","Abóbora","Chuchu","Pepino","Tomate","Pimentão","Cebola","Alho-poró","Cebolinha","Quiabo","Vagem","Ervilha","Milho","Batata-doce","Mandioca","Inhame","Cogumelo","Rabanete","Salsão"];
+const SATLEVELS=[
+ [0,2,"😖 Fome intensa","Comer nesse ponto costuma levar a comer rápido e demais. Tente começar a refeição antes de chegar aqui."],
+ [3,4,"🙂 Fome leve","Bom ponto para começar a comer. Você escolhe com calma e saboreia melhor."],
+ [5,6,"😌 Satisfação começando","Reduza o ritmo. Beba um gole de água, respire. O cérebro está começando a receber o sinal."],
+ [7,8,"🌸 Hara Hachi Bu (80%)","Este é o ponto do método: satisfeita, leve, sem peso. Pare aqui e deixe o resto para depois, se ainda quiser."],
+ [9,9,"😮‍💨 Cheia","Passou do ponto. Sem culpa: perceba a sensação e use como aprendizado para a próxima refeição."],
+ [10,10,"😵 Estufada","Desconforto. Faça uma caminhada leve e lembre da regra dos 20 minutos para a próxima vez."]
+];
+const MENU={
+A:[
+ {d:"Segunda",c:"Tamagoyaki da Casa + mamão + chá verde",a:"Caldo Dashi + Prato Wa: arroz com feijão (¼), sardinha assada (¼), couve e cenoura (½)",l:"Iogurte natural com fruta",j:"Sopa de abóbora com gengibre + 1 ovo cozido"},
+ {d:"Terça",c:"Iogurte Wa com frutas, linhaça e gergelim",a:"Frango ao gengibre com abobrinha + arroz (punho) + salada de folhas",l:"1 mão de castanhas + chá",j:"Salada morna de lentilha com ovo"},
+ {d:"Quarta",c:"Mingau de aveia com linhaça e maçã",a:"Peixe no vapor com gengibre + legumes + batata-doce",l:"Palitos de legumes com homus",j:"Zosui brasileiro (canja japonesa)"},
+ {d:"Quinta",c:"Panqueca de banana e aveia + iogurte",a:"Donburi brasileiro + picles rápido",l:"Fruta + chá de gengibre",j:"Caldo de feijão leve com couve + omelete de legumes"},
+ {d:"Sexta",c:"Torrada integral com abacate e ovo",a:"Carne com brócolis + arroz (punho) + salada",l:"Onigiri brasileiro pequeno",j:"Sopa de legumes + queijo branco"},
+ {d:"Sábado",c:"Vitamina verde leve + 1 ovo cozido",a:"Yakisoba leve de legumes e frango",l:"Pudim de chia com coco e manga",j:"Berinjela assada + peixe ou ovo"},
+ {d:"Domingo",c:"Pão integral com ovo e fruta (sem pressa)",a:"Refeição em família no Prato Wa (regra 80/20, aproveite!)",l:"Fruta da estação",j:"Caldo Dashi + salada + proteína leve"}
+],
+B:[
+ {d:"Segunda",c:"Torrada integral com abacate e ovo + chá verde",a:"Caldo de feijão leve + tilápia com crosta de gergelim + arroz (punho) + brócolis",l:"Iogurte natural com chia",j:"Zosui brasileiro"},
+ {d:"Terça",c:"Panqueca de banana e aveia + iogurte",a:"Bolinhos de grão-de-bico assados + salada colorida + batata-doce",l:"Palitos de legumes com homus",j:"Sopa de abóbora com gengibre + ovo cozido"},
+ {d:"Quarta",c:"Vitamina verde leve + 1 ovo cozido",a:"Frango ao gengibre com abobrinha + arroz (punho) + couve",l:"Fruta + 1 mão de castanhas",j:"Salada morna de lentilha com ovo"},
+ {d:"Quinta",c:"Tamagoyaki da Casa + fruta",a:"Carne com brócolis + arroz com feijão + salada de pepino e cenoura",l:"Pudim de chia com coco e manga",j:"Caldo Dashi + omelete de legumes"},
+ {d:"Sexta",c:"Mingau de aveia com canela e banana",a:"Peixe no vapor com gengibre + legumes + mandioca cozida",l:"Onigiri brasileiro pequeno",j:"Sopa de legumes + queijo branco"},
+ {d:"Sábado",c:"Iogurte Wa com frutas e gergelim",a:"Donburi brasileiro + picles rápido",l:"Chá gelado de verde + fruta",j:"Berinjela assada + sardinha assada"},
+ {d:"Domingo",c:"Café da manhã tranquilo: ovo, fruta e pão integral",a:"Refeição de domingo no Prato Wa (80/20, sem culpa)",l:"Iogurte com fruta",j:"Caldo de feijão leve + salada"}
+]};
+const SHOP=[
+ ["🥬 Hortifruti",["Couve","Brócolis","Abobrinha","Cenoura","Beterraba","Abóbora","Berinjela","Pepino","Tomate","Alface ou rúcula","Cebola e alho","Cebolinha","Gengibre (raiz)","Limão","Maçã","Banana","Mamão","Abacate","Laranja ou abacaxi","Champignon ou cogumelos"]],
+ ["🍳 Proteínas",["Ovos","Sardinha (fresca ou em lata)","Tilápia ou merluza","Frango (peito ou coxa sem pele)","Carne magra (patinho ou acém)","Iogurte natural","Queijo branco"]],
+ ["🫘 Grãos e secos",["Arroz","Feijão","Lentilha","Grão-de-bico","Aveia em flocos","Macarrão integral (pouco)","Pão integral","Batata-doce e mandioca","Castanhas","Linhaça","Gergelim","Chia"]],
+ ["🍵 Chás e temperos",["Chá verde","Chá de cevada (opcional)","Camomila","Capim-cidreira","Canela","Shoyu com menos sódio (opcional)","Azeite","Vinagre de maçã ou de arroz","Água de coco"]],
+ ["🧴 Para o ritual",["Protetor solar FPS 30+","Hidratante facial","Sabonete facial suave","Hidratante corporal","Chapéu ou boné"]]
+];
+const REC_CATS=[["todas","Todas"],["cafe","☀️ Café da manhã"],["caldo","🥣 Caldos"],["prato","🍽️ Pratos"],["lanche","🥒 Lanches"],["bebida","🍵 Bebidas"],["facil","🟢 Fáceis"]];
+const LVL=["","🟢 Fácil","🟡 Intermediária","🔴 Avançada"];
+const REC=[
+{c:"cafe",l:1,e:"🍳",n:"Tamagoyaki da Casa",t:"10 min",p:"1 pessoa",tg:["Proteína"],i:["3 ovos","1 colher (sopa) de cebolinha picada","1 colher (sopa) de água","1 pitada de sal","1 fio de azeite"],s:["Bata os ovos com a água, a cebolinha e o sal.","Aqueça uma frigideira antiaderente em fogo baixo com um fio de azeite.","Despeje um terço da mistura. Quando firmar nas bordas, enrole em direção ao cabo.","Empurre o rolinho para o lado, adicione mais mistura e repita até acabar.","Fatie e sirva morno."],d:"Complete o prato com tomate e cenoura ralada. Fica ótimo gelado na marmita."},
+{c:"cafe",l:1,e:"🥣",n:"Mingau de Aveia com Linhaça e Maçã",t:"10 min",p:"1 pessoa",tg:["Fibra"],i:["3 colheres (sopa) de aveia em flocos","200 ml de água (ou leite)","1 colher (chá) de linhaça moída","½ maçã picada","Canela a gosto"],s:["Leve a aveia e o líquido ao fogo baixo, mexendo por 5 minutos.","Acrescente a maçã e cozinhe mais 2 minutos.","Finalize com linhaça e canela."],d:"Para mais proteína, misture 1 colher de iogurte natural no final."},
+{c:"cafe",l:1,e:"🥛",n:"Iogurte Wa com Frutas e Gergelim",t:"5 min",p:"1 pessoa",tg:["Fermentado","Proteína"],i:["1 pote de iogurte natural (150 g)","½ banana ou 1 fatia de mamão","1 colher (chá) de linhaça ou chia","1 colher (chá) de gergelim"],s:["Coloque o iogurte numa tigela.","Corte a fruta e distribua por cima.","Finalize com as sementes."],d:"Prefira iogurte sem açúcar. Adoce só com a própria fruta."},
+{c:"cafe",l:1,e:"🥞",n:"Panqueca de Banana e Aveia",t:"10 min",p:"1 pessoa",tg:["Proteína","Fibra"],i:["1 banana madura","1 ovo","2 colheres (sopa) de aveia","Canela a gosto"],s:["Amasse a banana e misture com o ovo, a aveia e a canela.","Aqueça uma frigideira antiaderente em fogo baixo.","Despeje pequenas porções e doure dos dois lados, 2 minutos de cada."],d:"Sirva com iogurte natural e uma fruta fresca por cima."},
+{c:"cafe",l:1,e:"🥑",n:"Torrada com Abacate e Ovo",t:"10 min",p:"1 pessoa",tg:["Proteína","Gordura boa"],i:["1 fatia de pão integral","¼ de abacate","1 ovo cozido","Gotas de limão e uma pitada de sal","Gergelim a gosto"],s:["Torre o pão.","Amasse o abacate com limão e sal e espalhe na torrada.","Cubra com o ovo fatiado e o gergelim."],d:"Para um café mais completo, acrescente uma fruta e chá."},
+{c:"cafe",l:2,e:"🍙",n:"Onigiri Brasileiro de Sardinha",t:"20 min",p:"2 bolinhos",tg:["Proteína","Ômega-3"],i:["1 xícara de arroz cozido morno","½ lata de sardinha escorrida","1 colher (sopa) de cebolinha","Gotas de limão","Gergelim","Tira de couve branqueada ou de nori (opcional)"],s:["Amasse a sardinha com cebolinha e limão.","Molhe as mãos com água e uma pitada de sal.","Pegue metade do arroz, faça uma cova no centro e coloque o recheio.","Feche e modele em triângulo ou bolinha.","Envolva com a tira de couve ou nori e finalize com gergelim."],d:"Ótimo para lanche ou marmita. Tamanho de um punho fechado: é a porção de carboidrato do Prato Wa."},
+{c:"cafe",l:1,e:"🥬",n:"Vitamina Verde Leve",t:"5 min",p:"1 copo grande",tg:["Fibra","Hidratação"],i:["1 folha de couve sem o talo","1 fatia de abacaxi","1 cm de gengibre","200 ml de água de coco","Folhas de hortelã"],s:["Bata todos os ingredientes no liquidificador por 1 minuto.","Sirva gelado, sem coar."],d:"Acompanhe com um ovo cozido para garantir a proteína do café da manhã."},
+{c:"caldo",l:1,e:"🍲",n:"Caldo Dashi de Legumes",t:"30 min",p:"4 xícaras",tg:["Hidratação","Saciedade"],i:["1 litro de água","1 cebola","1 cenoura","Talos de cebolinha ou alho-poró","3 champignons (ou cogumelos secos)","1 pedaço de gengibre","Sal a gosto"],s:["Coloque tudo na panela com a água.","Cozinhe em fogo médio por 25 minutos, sem tampar totalmente.","Coe e sirva quente em xícara, antes da refeição."],d:"Use as sobras de legumes. Congele em porções. É a base para zosui, sopas e molhos."},
+{c:"caldo",l:2,e:"🍚",n:"Zosui Brasileiro (canja japonesa)",t:"30 min",p:"2 pessoas",tg:["Proteína","Conforto"],i:["3 xícaras de caldo dashi ou de legumes","½ xícara de arroz cozido","1 peito de frango cozido e desfiado","1 cenoura em cubinhos","1 cm de gengibre ralado","1 ovo batido","Cebolinha"],s:["Ferva o caldo com a cenoura e o gengibre por 8 minutos.","Adicione o arroz e o frango e cozinhe 5 minutos.","Desligue o fogo e mexa o ovo batido, formando fios.","Finalize com cebolinha."],d:"Ótimo para dias frios ou noites em que você quer algo leve e quentinho."},
+{c:"caldo",l:1,e:"🫘",n:"Caldo de Feijão Leve com Couve",t:"30 min",p:"3 xícaras",tg:["Fibra","Proteína vegetal"],i:["1 concha de feijão cozido","1 xícara de água ou caldo","1 dente de alho","1 folha de couve em tiras","Cebolinha","Limão"],s:["Refogue o alho em um fio de azeite.","Adicione o feijão e a água e deixe ferver por 10 minutos.","Bata metade no liquidificador e volte à panela.","Junte a couve e cozinhe 3 minutos. Finalize com limão e cebolinha."],d:"Ótimo para começar o almoço, no lugar do prato cheio logo de cara."},
+{c:"caldo",l:1,e:"🎃",n:"Sopa de Abóbora com Gengibre",t:"30 min",p:"3 xícaras",tg:["Antioxidantes"],i:["300 g de abóbora em cubos","1 cebola pequena","1 cm de gengibre","500 ml de água ou caldo","Sal e pimenta a gosto","Sementes de abóbora ou gergelim"],s:["Refogue cebola e gengibre num fio de azeite.","Adicione a abóbora e a água e cozinhe por 20 minutos.","Bata no liquidificador até ficar cremoso.","Sirva com as sementes por cima."],d:"Acrescente 1 ovo cozido ou frango desfiado para virar jantar completo."},
+{c:"prato",l:1,e:"🐟",n:"Sardinha Assada com Limão e Legumes",t:"30 min",p:"2 pessoas",tg:["Ômega-3","Cálcio"],i:["6 sardinhas limpas (ou filés)","1 limão","2 dentes de alho","1 abobrinha em rodelas","1 cenoura em rodelas","Azeite, sal e ervas"],s:["Tempere as sardinhas com limão, alho, sal e ervas.","Disponha legumes e sardinhas numa assadeira com um fio de azeite.","Asse a 200 °C por 20 minutos."],d:"Peixe pequeno e barato, rico em ômega-3. Se usar sardinha em lata, sirva com os legumes assados."},
+{c:"prato",l:1,e:"🍗",n:"Frango ao Gengibre com Abobrinha",t:"25 min",p:"2 pessoas",tg:["Proteína"],i:["2 filés de frango em tiras","1 abobrinha em meias-luas","2 cm de gengibre ralado","2 dentes de alho","1 colher (chá) de shoyu com menos sódio","Cebolinha","Gergelim"],s:["Tempere o frango com alho, gengibre e shoyu.","Doure numa frigideira com um fio de azeite por 6 minutos.","Junte a abobrinha e cozinhe 4 minutos, mantendo-a firme.","Finalize com cebolinha e gergelim."],d:"Sirva com arroz do tamanho de um punho e salada de folhas."},
+{c:"prato",l:2,e:"🐠",n:"Peixe no Vapor com Gengibre e Cebolinha",t:"25 min",p:"2 pessoas",tg:["Proteína","Leve"],i:["2 filés de tilápia ou merluza","2 cm de gengibre em fatias finas","Cebolinha picada","1 colher (chá) de shoyu com menos sódio","Limão","Legumes para acompanhar (brócolis, cenoura)"],s:["Tempere o peixe com limão e coloque sobre uma folha de papel-alumínio ou assadeira.","Cubra com gengibre e embrulhe formando uma trouxinha.","Cozinhe no vapor ou no forno a 200 °C por 15 minutos.","Finalize com shoyu e cebolinha."],d:"Cozinhe os legumes no vapor junto. Rápido, saboroso e quase sem gordura."},
+{c:"prato",l:2,e:"🍛",n:"Donburi Brasileiro (tigela de arroz, frango e ovo)",t:"25 min",p:"1 pessoa",tg:["Proteína","Completo"],i:["½ xícara de arroz cozido","1 filé pequeno de frango desfiado","1 ovo mexido macio","Cenoura ralada e pepino","Cebolinha e gergelim","1 colher (chá) de shoyu com menos sódio"],s:["Coloque o arroz na tigela.","Distribua o frango, o ovo mexido, a cenoura e o pepino.","Finalize com cebolinha, gergelim e um fio de shoyu."],d:"Uma tigela única, mas com todas as partes do Prato Wa."},
+{c:"prato",l:2,e:"🍜",n:"Yakisoba Leve",t:"30 min",p:"2 pessoas",tg:["Fibra","Variedade"],i:["120 g de macarrão integral (cozido al dente)","2 xícaras de repolho fatiado","1 cenoura em palitos","1 xícara de brócolis em floretes","1 peito de frango em tiras","2 dentes de alho e 1 cm de gengibre","1 colher (sopa) de shoyu com menos sódio"],s:["Refogue alho e gengibre, junte o frango e doure.","Adicione cenoura e brócolis e refogue 3 minutos.","Junte repolho e macarrão e misture por 2 minutos.","Finalize com shoyu e sirva."],d:"A proporção é o segredo: mais legumes que macarrão. A fama do yakisoba cabe no Prato Wa."},
+{c:"prato",l:1,e:"🥗",n:"Salada Morna de Lentilha com Ovo",t:"25 min",p:"2 pessoas",tg:["Fibra","Proteína vegetal"],i:["1 xícara de lentilha cozida","2 ovos cozidos","1 tomate picado","Folhas de rúcula","Cebolinha","Azeite, limão e sal"],s:["Misture a lentilha morna com tomate e cebolinha.","Tempere com azeite, limão e sal.","Sirva sobre as folhas, com o ovo cortado ao meio."],d:"Prepare a lentilha em dobro e use em duas refeições."},
+{c:"prato",l:3,e:"🧆",n:"Bolinhos de Grão-de-bico Assados",t:"40 min",p:"4 pessoas",tg:["Fibra","Proteína vegetal"],i:["1 xícara de grão-de-bico cozido","1 cebola pequena ralada","2 dentes de alho","2 colheres (sopa) de aveia","Salsinha e cebolinha","1 colher (chá) de cominho","Sal e limão"],s:["Triture grão-de-bico, cebola, alho e temperos sem virar purê.","Misture a aveia e as ervas e modele bolinhas.","Disponha numa assadeira untada e asse a 200 °C por 25 minutos, virando na metade."],d:"Sirva com salada e iogurte natural com limão como molho."},
+{c:"prato",l:2,e:"🥩",n:"Carne com Brócolis ao Shoyu",t:"25 min",p:"2 pessoas",tg:["Proteína","Ferro"],i:["250 g de patinho em tiras finas","2 xícaras de brócolis","2 dentes de alho","1 cm de gengibre","1 colher (sopa) de shoyu com menos sódio","1 colher (chá) de gergelim"],s:["Marine a carne com alho, gengibre e shoyu por 10 minutos.","Doure a carne rapidamente em fogo alto.","Junte o brócolis e um pouco de água e cozinhe 4 minutos.","Finalize com gergelim."],d:"Porção de carne do tamanho da palma da mão por pessoa. O brócolis ocupa o resto do prato."},
+{c:"prato",l:3,e:"🐟",n:"Tilápia com Crosta de Gergelim",t:"30 min",p:"2 pessoas",tg:["Proteína","Cálcio"],i:["2 filés de tilápia","2 colheres (sopa) de gergelim","1 colher (chá) de shoyu com menos sódio","Suco de ½ limão","1 colher (chá) de gengibre ralado","Salada para acompanhar"],s:["Tempere o peixe com limão, shoyu e gengibre.","Passe um dos lados no gergelim.","Asse a 200 °C por 15 minutos ou doure em frigideira antiaderente."],d:"O gergelim traz sabor e uma textura crocante sem fritura."},
+{c:"prato",l:3,e:"🍆",n:"Berinjela Assada ao Estilo Japonês",t:"35 min",p:"2 pessoas",tg:["Fibra","Vegetariano"],i:["2 berinjelas cortadas ao meio","1 colher (sopa) de shoyu com menos sódio","1 colher (chá) de mel","1 colher (chá) de gengibre ralado","1 dente de alho","Gergelim e cebolinha","Azeite"],s:["Faça cortes em xadrez na polpa e pincele com azeite.","Asse a 200 °C por 25 minutos até ficar macia.","Misture shoyu, mel, gengibre e alho e pincele sobre a berinjela.","Volte ao forno por 5 minutos. Finalize com gergelim e cebolinha."],d:"Acompanhe com ovo ou peixe para completar a proteína."},
+{c:"lanche",l:1,e:"🥕",n:"Palitos de Legumes com Homus",t:"15 min",p:"3 porções",tg:["Fibra","Proteína vegetal"],i:["1 xícara de grão-de-bico cozido","1 colher (sopa) de gergelim moído","Suco de 1 limão","1 dente de alho","2 colheres (sopa) de azeite","Água para acertar a textura","Palitos de cenoura, pepino e salsão"],s:["Bata grão-de-bico, gergelim, limão, alho e azeite, acrescentando água aos poucos.","Ajuste o sal e sirva com os palitos."],d:"Dura 4 dias na geladeira. Lanche perfeito para o fim da tarde."},
+{c:"lanche",l:1,e:"🥭",n:"Pudim de Chia com Coco e Manga",t:"10 min + geladeira",p:"2 potes",tg:["Fibra","Sobremesa"],i:["3 colheres (sopa) de chia","200 ml de leite (ou bebida vegetal)","1 colher (sopa) de coco ralado","½ manga em cubos","Canela"],s:["Misture chia, leite, coco e canela e deixe na geladeira por 4 horas (ou de um dia para o outro).","Sirva com a manga por cima."],d:"Doce sem açúcar adicionado. A fruta madura já adoça."},
+{c:"lanche",l:1,e:"🥒",n:"Picles Rápido de Pepino e Cenoura",t:"15 min",p:"1 pote",tg:["Acompanhamento"],i:["1 pepino fatiado fino","1 cenoura fatiada fina","½ xícara de vinagre (maçã ou arroz)","½ xícara de água","1 colher (chá) de mel","½ colher (chá) de sal"],s:["Aqueça vinagre, água, mel e sal até dissolver.","Despeje sobre os legumes numa jarra de vidro.","Espere esfriar e leve à geladeira por 1 hora."],d:"Dura cerca de uma semana na geladeira. Acompanha arroz, ovo e peixe, no estilo tsukemono."},
+{c:"bebida",l:1,e:"☕",n:"Chá Quente de Gengibre, Limão e Canela",t:"10 min",p:"2 xícaras",tg:["Digestão","Ritual"],i:["4 fatias de gengibre","1 pau de canela","500 ml de água","Suco de ½ limão"],s:["Ferva a água com o gengibre e a canela por 5 minutos.","Desligue, tampe por 3 minutos e coe.","Adicione o limão e beba morno."],d:"Ótimo 15 a 20 minutos antes do almoço ou à noite."},
+{c:"bebida",l:1,e:"🧊",n:"Chá Gelado de Verde com Limão e Hortelã",t:"5 min + geladeira",p:"1 litro",tg:["Hidratação"],i:["2 sachês de chá verde","1 litro de água","Folhas de hortelã","Rodelas de limão"],s:["Coloque o chá, a hortelã e o limão numa jarra com a água.","Deixe na geladeira por 4 a 8 horas e retire os sachês."],d:"Substitui refrigerante e suco de caixinha. Tem cafeína: prefira até o meio da tarde."}
+];
+const TRUCKS=[
+ ["🍚","Hara Hachi Bu: pare nos 80%","Largue o talher 3 vezes durante a refeição e pergunte: estou satisfeita ou cheia? Pare em satisfeita.","O cérebro leva cerca de 20 minutos para registrar a saciedade. Parar um pouco antes do 'cheio' evita o peso pós-refeição."],
+ ["🥢","Pratinhos e tigelinhas","Sirva a comida em prato de sobremesa ou em tigelinhas separadas. Leve só o que couber.","Porções visualmente maiores num prato menor ajudam muita gente a servir menos, sem sensação de privação."],
+ ["🍲","Caldo antes da refeição","Comece o almoço e o jantar com uma xícara de caldo ou sopa leve, devagar.","Alimentos líquidos e quentes enchem o estômago e diminuem o ritmo da refeição."],
+ ["🍵","Chá quente o dia todo","Troque a bebida açucarada por chá. Tenha uma garrafa térmica sempre pronta.","A bebida quente pede calma, hidrata e substitui calorias líquidas."],
+ ["🪑","Comer sentada, sem tela (shokuji)","Faça a primeira refeição do dia à mesa, sem celular nem TV. Olhe a comida, sinta o cheiro.","Comer com atenção aumenta a saciedade e reduz o 'beliscar' sem perceber."],
+ ["🚶‍♀️","Caminhar depois de comer","10 a 15 minutos de caminhada leve depois da refeição principal.","Movimento leve depois de comer ajuda a controlar o pico de glicose e favorece a digestão."],
+ ["🪜","Movimento invisível","Escada em vez de elevador, descer um ponto antes, levantar a cada hora, falar ao telefone em pé.","Pequenos movimentos somados ao longo do dia gastam energia e mantêm as articulações ativas."],
+ ["🧘‍♀️","Sentar e levantar do chão","Sente no tapete por 5 minutos por dia (leitura, TV) e levante com o mínimo de apoio que for seguro.","A cultura japonesa do tatame treina mobilidade e força das pernas todos os dias. Use apoio se precisar."],
+ ["🛁","Ofurô noturno","Banho morno por 10 a 15 minutos, 1 a 2 horas antes de dormir, com luz baixa.","O aquecimento seguido do esfriamento natural do corpo ajuda a pegar no sono."],
+ ["🌂","Protetor solar e sombra todo dia","Protetor no rosto, pescoço e mãos todas as manhãs. Chapéu e sombra quando possível.","É o maior investimento contra o envelhecimento visível da pele. É a base da fama de pele jovem das japonesas."],
+ ["🌙","Sono em horário fixo","Escolha um horário de dormir e de acordar e repita, inclusive no fim de semana. Quarto escuro e fresco.","O sono regular ajuda no controle da fome, do humor e da recuperação do corpo."],
+ ["🌳","Pausa Ma e natureza (shinrin-yoku)","Faça 3 respirações lentas entre as tarefas e passe 20 minutos por semana em contato com árvores e verde.","Pausas e natureza ajudam a reduzir o estresse e a sensação de pressa constante."]
+];
+const EX=[
+ {n:"Despertar do Grou",e:"🦢",c:"Inspire levantando os braços, expire descendo devagar. Alongue a coluna."},
+ {n:"Sentar e Levantar",e:"🪑",c:"Sente devagar tocando a cadeira e levante empurrando o chão."},
+ {n:"Flexão na Parede",e:"🧱",c:"Mãos na parede na altura dos ombros. Dobre os cotovelos e empurre de volta."},
+ {n:"Marcha Taisō",e:"🚶‍♀️",c:"Marche no lugar, braços soltos. Respire em ritmo: 2 passos inspirando, 2 expirando."},
+ {n:"Ponte do Quadril",e:"🌉",c:"Deitada, eleve o quadril apertando os glúteos. Desça devagar."},
+ {n:"Remada do Bambu",e:"🎋",c:"Tronco levemente inclinado, puxe os cotovelos para trás juntando as escápulas."},
+ {n:"Equilíbrio do Grou",e:"🦩",c:"Apoie-se numa perna por 15 a 20 segundos e troque. Termine com 3 respirações lentas."}
+];
+const WEEKS=[
+ {t:"🌱 Semana 1 · O Reinício",u:"Ritual dos 7 minutos (ritmo lento, versão mais fácil se precisar)"},
+ {t:"🔥 Semana 2 · O Ritmo",u:"Ritual dos 7 minutos sem pausas entre os movimentos"},
+ {t:"💪 Semana 3 · A Virada",u:"Ritual dos 7 minutos com descidas lentas (3 a 4 segundos)"},
+ {t:"🌟 Semana 4 · A Nova Eu",u:"Ritual dos 7 minutos com as versões mais desafiadoras"}
+];
+const CAL=[
+ ["Monte o Prato Wa no almoço (½ vegetais, ¼ proteína, ¼ carbo) e comece pelo caldo.","Escreva a Carta para Você Mesma (módulo 01).","Hoje você começa. Isso já é uma vitória."],
+ ["Faça um café da manhã com proteína (ovo, iogurte ou sardinha).","Troque uma bebida açucarada por chá.","Um passo de cada vez."],
+ ["Pratique o Hara Hachi Bu: largue o talher 3 vezes e pare nos 80%.","Caminhe 10 minutos depois do almoço.","Satisfeita, não estufada."],
+ ["Troque 1 ultraprocessado por uma opção do Prato Wa.","Faça a Pausa Ma (módulo 08) antes do almoço.","Respirar também é cuidar."],
+ ["Faça uma refeição sentada, sem tela.","Passe protetor solar no rosto, pescoço e mãos.","O básico bem feito vale mais que o complicado."],
+ ["Prepare uma receita nova do Guia (ex.: Caldo Dashi).","Tome um banho morno à noite, sem celular (ofurô).","Descansar faz parte do protocolo."],
+ ["Revise a semana: o que funcionou melhor?","Preencha o Check-in da semana 1 e as medidas (módulos 11 e 13).","Semana 1 completa! O corpo já percebeu o novo ritmo."],
+ ["Inclua caldo ou sopa em pelo menos 1 refeição.","Vá dormir no horário que você definiu.","Constância é mais forte que intensidade."],
+ ["Marque 5 vegetais diferentes hoje (Desafio dos 30).","Caminhe 15 minutos depois da refeição principal.","A variedade alimenta o intestino e a alegria."],
+ ["Faça um lanche da tarde com proteína (iogurte, ovo ou castanhas).","Reduza as telas 30 minutos antes de dormir.","O corpo adora previsibilidade."],
+ ["Experimente um fermentado: iogurte natural, kefir, chucrute ou picles.","Tome 5 minutos de sol da manhã (com protetor no rosto).","Luz da manhã ajuda o relógio do corpo."],
+ ["Troque a bebida da tarde por chá.","Levante a cada hora e faça 1 minuto de movimento.","Movimento pequeno, efeito grande."],
+ ["Cozinhe uma receita do Guia (ex.: Peixe no Vapor).","Faça o ritual noturno completo e o Diário de Vitórias.","Você está se tornando outra pessoa, aos poucos."],
+ ["Pergunte-se: o Prato Wa já está ficando automático?","Preencha o Check-in da semana 2 e as medidas.","Metade do caminho. Orgulhe-se."],
+ ["Siga o cardápio do módulo 05 por 3 dias.","Sente e levante do chão 3 vezes (com apoio, se precisar).","Um corpo forte é um corpo que se move."],
+ ["Aumente a proteína do café da manhã (uma palma da mão).","Faça a Ponte para o Futuro (módulo 13).","Visualizar é ensaiar o futuro."],
+ ["Almoce sem pressa: 20 minutos à mesa.","Caminhe 20 minutos em lugar verde (shinrin-yoku).","A natureza também é tratamento."],
+ ["Faça um jantar leve, terminando 3 horas antes de dormir.","Faça a Reprogramação de Crenças (módulo 13).","Pensamentos são histórias. Reescreva."],
+ ["Prepare um lanche saudável para levar na bolsa.","Faça a massagem facial de 3 minutos à noite.","Cuidar de si é uma cerimônia diária."],
+ ["Experimente uma receita avançada (Berinjela ou Bolinhos).","Escreva o seu Plano Se/Então (módulo 13).","Decidir antes protege você na hora H."],
+ ["Dia livre consciente (80/20): aproveite sem culpa.","Preencha o Check-in da semana 3, as medidas e a foto semanal.","A vida real também faz parte do método."],
+ ["Monte o cardápio da próxima semana.","Faça o Danshari: separe 3 peças do guarda-roupa (módulo 15).","Você merece roupas que fazem sentir bem."],
+ ["Prepare 2 refeições com antecedência (marmitas Wa).","Faça o Ikigai e Kaizen (módulo 13).","Pequenos passos, grande direção."],
+ ["Siga a ordem completa em todas as refeições: caldo, vegetais, proteína, carbo.","Use a peça de roupa que faz você se sentir bem.","Sinta o que já mudou."],
+ ["Escolha seu Prato Wa favorito e repita.","Faça a Pausa Ma 3 vezes ao dia.","Você já sabe o caminho."],
+ ["Compartilhe uma receita com uma amiga.","Escreva uma carta de gratidão ao seu corpo.","Gratidão também transforma."],
+ ["Revise a lista de compras para manter o protocolo.","Refaça o teste de sentar e levantar (módulo 07).","Compare com o dia 1 e comemore."],
+ ["Celebre com uma refeição especial no Prato Wa.","Preencha a Carta de Compromisso e emita o certificado (módulo 16).","Protocolo concluído. A nova rotina é sua."]
+];
+const BADGES=[
+ ["🌱","Primeiro passo","1 dia completo"],["🔥","Em chamas","3 dias seguidos"],["🌸","Semana 1","Reinício completo"],["🎋","Semana 2","Ritmo completo"],["💪","Semana 3","Virada completa"],["🌟","Semana 4","Nova eu completa"],["🏆","Protocolo concluído","28 dias"]
+];
+const WHEEL=["Saúde e corpo","Alimentação e energia","Movimento","Mente e emoções","Relacionamentos","Trabalho e propósito","Descanso e prazer","Autocuidado e beleza"];
+const QUIZZES=[
+{id:"q1",icon:"🌡️",title:"Teste 1 · Perfil Metabólico-Hormonal",intro:"Descubra qual fase o seu corpo pede mais atenção. As respostas mostram por onde começar.",
+ qs:[
+ ["O que mais mudou em você depois dos 40?",["Ganho peso ou barriga mesmo comendo como antes","Fiquei mais ansiosa e irritada","Vivo cansada, acordo sem energia","Calores, suor noturno ou ciclo irregular"]],
+ ["Como é o seu sono?",["Durmo, mas o corpo parece não se recuperar","Demoro a desligar a cabeça","Acordo cansada mesmo dormindo","Acordo suada ou com calor"]],
+ ["Como é a sua fome?",["Como normal, mas engordo","A fome vem com estresse ou emoção","Fome de doce para ter energia","Oscila: ora sem fome, ora demais"]],
+ ["Como está o seu exercício?",["Quase nenhum no dia a dia","Faço, mas o estresse pesa","Falta energia para fazer","O calor atrapalha"]],
+ ["Como você chega ao fim do dia?",["Sento no sofá e fico","Com a mente acelerada","Exausta","Irritada ou com calor"]],
+ ["Sobre a sua barriga:",["Acumulou mesmo comendo pouco","Incha com o estresse","Fica pesada e cansada","Tem retenção que vai e volta"]],
+ ["Como está o seu humor?",["Desânimo com o próprio corpo","Ansiosa e tensa","Sem paciência e sem energia","Oscilante, muda sem aviso"]],
+ ["O que você mais quer agora?",["Dar um impulso ao metabolismo e ganhar força","Acalmar a mente e a vontade de comer","Ter energia e disposição de novo","Dormir melhor e aliviar os calores"]]
+ ],
+ res:{
+ A:{e:"🔋",t:"Corpo em Pausa",d:"Seu metabolismo parece mais lento e o músculo pode estar pedindo atenção. É um padrão muito comum depois dos 40, quando a massa muscular diminui e a rotina fica mais sedentária.",u:"Prioridade: Undō (ritual de 7 minutos todos os dias) e proteína em cada refeição. Comece pelos módulos 07 e 04 e use o teste de sentar e levantar para medir o progresso."},
+ B:{e:"🌿",t:"Corpo em Alerta",d:"Seu corpo está em modo de estresse. Cortisol alto por muito tempo aumenta fome emocional, tensão e dificulta o sono e o controle do apetite.",u:"Prioridade: Seikatsu. Pausas Ma, respiração, ofurô, caminhada em lugar verde e rotina de sono. Comece pelos módulos 08 e 09 e faça a Pausa Ma todos os dias."},
+ C:{e:"🌙",t:"Corpo em Cansaço",d:"A sua energia está baixa, e o sono e a recuperação são o ponto central. Dormir mal e comer de forma irregular mantêm o ciclo de cansaço e doce.",u:"Prioridade: sono e café da manhã proteico. Ritual noturno do módulo 09, horário fixo para dormir, proteína cedo e refeições regulares. Se o cansaço for intenso, converse com seu médico."},
+ D:{e:"🌡️",t:"Corpo em Transição",d:"Os sintomas hormonais estão presentes e podem ser o fator principal do seu momento. Cada mulher sente de um jeito e vale ter apoio profissional.",u:"Prioridade: módulo 10 (Guia dos Sintomas) combinado com ofurô, rotina de sono e Prato Wa. Leve a sua lista de sintomas ao ginecologista. Hábitos ajudam, e o médico pode oferecer opções adicionais."}
+ }},
+{id:"q2",icon:"🍽️",title:"Teste 2 · Qual é o seu gatilho de fome?",intro:"Entender por que você come sem fome é o caminho para mudar. Escolha a resposta que mais se parece com você.",
+ qs:[
+ ["Quando como sem fome real, geralmente é porque:",["Estou triste, sozinha ou ansiosa","Estou sobrecarregada e com pressa","Está na minha frente, é horário ou sobrou","Passei muitas horas sem comer"]],
+ ["O momento mais difícil do dia é:",["A noite, quando fico sozinha","O fim da tarde, depois do trabalho","Em frente à TV ou ao celular","Depois do jantar leve ou de madrugada"]],
+ ["Quando abro a geladeira sem fome:",["Procuro conforto","Belisco em pé, no meio de outra coisa","Abro por hábito","Estou com vazio no estômago"]],
+ ["O que mais me atrai:",["Doces e comidas de conforto","Salgadinhos e coisas rápidas","O que estiver à mão","Qualquer coisa que sacie"]],
+ ["O meu ritmo de refeições:",["Irregular, depende do meu humor","Corrido, muitas vezes em pé","Petisco o dia todo","Pulo refeições e compenso depois"]],
+ ["Depois de comer demais, eu sinto:",["Culpa","Cansaço","Nada, nem percebo","Sono e peso"]],
+ ["O que mais me ajudaria:",["Acolhimento e rituais de cuidado","Pausas e respiração","Mudar o ambiente da casa","Refeições mais estruturadas, com proteína"]],
+ ["O dia mais difícil é quando:",["Me sinto sozinha ou criticada","Tenho prazos e pressão","É fim de semana livre","Pulo o almoço"]]
+ ],
+ res:{
+ A:{e:"💗",t:"Fome Emocional",d:"Você usa a comida como acolhimento. Não é fraqueza, é uma forma de cuidar da emoção que ficou sem outro caminho.",u:"Use a Pausa Ma antes de comer, o Diário de Vitórias e o Plano Se/Então. Troque o doce da noite por um ritual: chá quente, banho morno, mensagem para alguém. Se o comer emocional for intenso, procure apoio psicológico."},
+ B:{e:"⏱️",t:"Fome da Pressa e do Estresse",d:"Seu gatilho é a correria. Come rápido, em pé, sem perceber. O cérebro não registra a saciedade e a fome parece voltar rápido.",u:"Comece pelo caldo antes da refeição, respire 3 vezes e use a regra dos 20 minutos. Reserve 15 minutos de pausa sentada e prefira lanches já preparados. O Hara Hachi Bu é o seu melhor aliado."},
+ C:{e:"📺",t:"Fome do Hábito e do Ambiente",d:"Você come por rotina, pela comida à vista e pelo piloto automático. O ambiente decide por você.",u:"Mude o ambiente: cozinha organizada, frutas à vista, doces guardados, pratinhos pequenos e comer sentada, sem tela. Defina o horário de fechar a cozinha, às 21h."},
+ D:{e:"🥄",t:"Fome Fisiológica",d:"O seu corpo está pedindo comida de verdade. Pular refeições leva à fome intensa e a escolhas impulsivas depois.",u:"Faça refeições regulares com proteína (uma palma da mão) em cada uma, sobretudo no café da manhã e no lanche. Use o cardápio do módulo 05 e tenha sempre um lanche de emergência (ovo cozido, iogurte, castanhas)."}
+ }},
+{id:"q3",icon:"🎋",title:"Teste 3 · Seu símbolo japonês",intro:"Descubra como você se motiva e que estilo de rotina funciona melhor para você.",
+ qs:[
+ ["Quando começo algo novo:",["Vou me adaptando e ajustando no caminho","Conto para as amigas e me empolgo","Crio uma rotina estável e sigo","Pesquiso e planejo cada detalhe"]],
+ ["O que mais me motiva:",["Sentir liberdade e flexibilidade","A energia de outras pessoas","A segurança de saber o que vem","Ver números e progresso"]],
+ ["Quando algo dá errado:",["Me adapto e sigo em frente","Procuro apoio de alguém","Volto à minha rotina de sempre","Analiso o que falhou"]],
+ ["Prefiro me exercitar:",["Variando, sem rotina fixa","Acompanhada","No mesmo horário, todo dia","Com plano e registro"]],
+ ["Quando cozinho:",["Improviso","Para dividir com as pessoas","Faço as receitas que conheço","Sigo as medidas exatamente"]],
+ ["O meu maior risco no protocolo:",["Fazer só quando dá vontade","Perder o foco com novidades","Resistir às mudanças","Perfeccionismo"]],
+ ["Uma boa recompensa para mim:",["Um passeio diferente","Um encontro com amigas","Um momento tranquilo em casa","Ver o gráfico evoluindo"]],
+ ["A frase que mais me representa:",["Dobro, mas não quebro","A vida é melhor acompanhada","Devagar e sempre","O que é medido melhora"]]
+ ],
+ res:{
+ A:{e:"🎋",t:"Bambu",d:"Você é flexível e resiliente. Dobra com o vento e não quebra. Funciona melhor com variedade e liberdade.",u:"Tenha um plano B para cada dia (versão mais fácil do ritual, receita rápida). Alterne receitas e horários. O risco é fazer só quando dá vontade: ancore o ritual a um gatilho, como 'depois do café'."},
+ B:{e:"🌸",t:"Sakura",d:"Você floresce junto com as pessoas. Sociável, entusiasmada, se anima com novidades e companhia.",u:"Convide uma amiga para fazer o desafio dos 28 dias com você, troquem receitas e fotos do Prato Wa, combinem caminhadas. O risco é se dispersar: escolha 3 hábitos por semana e mantenha o foco."},
+ C:{e:"⛰️",t:"Montanha",d:"Você é constante e confiável. Gosta de rotina e segurança, e leva compromisso a sério.",u:"Seu superpoder é a rotina: defina horários fixos para o ritual de 7 minutos, o ofurô e o cardápio. O risco é resistir às mudanças: experimente uma receita nova por semana."},
+ D:{e:"🦢",t:"Grou",d:"Você é analítica e precisa. Gosta de dados, planos e acompanhar o progresso.",u:"Use o painel de medidas, o teste de força e os check-ins semanais. Monte o cardápio da semana antes. O risco é o perfeccionismo: use a regra 80/20 e lembre-se do Wabi-sabi."}
+ }}
+];
+/* ================= APP ================= */
+const $=id=>document.getElementById(id);
+const $$=(sel,root)=>Array.from((root||document).querySelectorAll(sel));
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const KEY='pj_wa_v1';
+let S={};
+try{S=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){S={}}
+['f','done','fav','cal','veg','shop','chk','trk2','wheel','quiz','trk'].forEach(k=>{if(!S[k]||typeof S[k]!=='object')S[k]={}});
+if(!Array.isArray(S.diary))S.diary=[];
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+
+/* ---------- Navegação ---------- */
+const ORDER=NAV.reduce((a,g)=>a.concat(g.items.map(i=>i[0])),[]);
+const MODS=ORDER.filter(id=>id.indexOf('p-m')===0);
+function buildNav(){
+  $('nav').innerHTML=NAV.map(g=>'<div class="navg"><h6>'+g.g+'</h6>'+g.items.map(i=>'<button class="navl" data-go="'+i[0]+'"><span>'+i[1]+'</span><span>'+i[2]+'</span><span class="ck">✓</span></button>').join('')+'</div>').join('');
+}
+function closeSide(){$('side').classList.remove('open');$('veil').style.display='none'}
+function openSide(){$('side').classList.add('open');$('veil').style.display='block'}
+function go(id){
+  if(!$(id))id='p-capa';
+  $$('.page').forEach(p=>p.classList.toggle('on',p.id===id));
+  $$('.navl').forEach(b=>b.classList.toggle('on',b.dataset.go===id));
+  S.last=id;save();
+  try{history.replaceState(null,'','#'+id)}catch(e){}
+  window.scrollTo(0,0);
+  closeSide();
+}
+function addPagers(){
+  $$('.page').forEach(p=>{
+    const i=ORDER.indexOf(p.id);
+    if(p.dataset.mod){
+      const d=document.createElement('div');d.className='donebar';
+      d.innerHTML='<button class="btn" data-done="'+p.id+'"></button>';
+      p.appendChild(d);
+    }
+    const prev=ORDER[i-1],next=ORDER[i+1];
+    const pg=document.createElement('div');pg.className='pager';
+    pg.innerHTML=(prev?'<button class="btn ghost" data-go="'+prev+'">← Anterior</button>':'<span></span>')+(next?'<button class="btn rose" data-go="'+next+'">Próximo →</button>':'<span></span>');
+    p.appendChild(pg);
+  });
+}
+function updateProgress(){
+  const n=MODS.filter(id=>S.done[id]).length;
+  const pct=Math.round(n/MODS.length*100);
+  $('progBar').style.width=pct+'%';
+  $('progTxt').textContent='Seu progresso: '+pct+'% ('+n+' de '+MODS.length+' módulos)';
+  $('miniProg').textContent=pct+'%';
+  $$('.navl').forEach(b=>b.classList.toggle('done',!!S.done[b.dataset.go]));
+  $$('[data-done]').forEach(b=>{
+    const on=!!S.done[b.dataset.done];
+    b.classList.toggle('on',on);
+    b.textContent=on?'✓ Módulo concluído':'Marcar módulo como concluído';
+  });
+}
+
+/* ---------- Campos salvos ---------- */
+function flash(el){
+  const a=el.closest('.activity');const s=a&&a.querySelector('.saved');
+  if(!s)return;
+  s.textContent='✓ Salvo automaticamente';s.classList.add('show');
+  clearTimeout(s._t);s._t=setTimeout(()=>s.classList.remove('show'),1400);
+}
+function bindFields(root){
+  $$('[data-save]',root).forEach(el=>{
+    if(el.dataset.bound)return;el.dataset.bound='1';
+    const k=el.dataset.save;
+    if(S.f[k]!==undefined)el.value=S.f[k];
+    el.addEventListener('input',()=>{S.f[k]=el.value;save();flash(el)});
+  });
+}
+
+/* ---------- Capa / índice / imprimíveis ---------- */
+function renderIndex(){
+  let h='';
+  NAV.forEach(g=>{
+    h+='<h3>'+g.g+'</h3><div class="idx">'+g.items.map(i=>'<button data-go="'+i[0]+'"><span>'+i[1]+'</span><span>'+i[2]+'</span><span class="n">→</span></button>').join('')+'</div>';
+  });
+  $('idxBox').innerHTML=h;
+  $('printGrid').innerHTML=PRINTS.map(p=>'<div class="card" style="cursor:pointer" data-go="'+p[3]+'"><span class="em" style="font-size:30px;display:block">'+p[0]+'</span><h4>'+p[1]+'</h4><p style="font-size:14px">'+p[2]+'</p><span class="pill y">'+p[4]+'</span></div>').join('');
+}
+function petals(){
+  const box=$('coverBox');
+  for(let i=0;i<12;i++){
+    const s=document.createElement('span');s.className='petal';
+    s.style.left=(Math.random()*96)+'%';
+    s.style.animationDuration=(7+Math.random()*8)+'s';
+    s.style.animationDelay=(-Math.random()*10)+'s';
+    s.style.opacity=(.25+Math.random()*.4);
+    box.appendChild(s);
+  }
+}
+
+/* ---------- Checklists de sinais ---------- */
+function renderChecks(boxId,list,key,cb){
+  const box=$(boxId);if(!box)return;
+  if(!S.chk[key])S.chk[key]={};
+  box.innerHTML=list.map((t,i)=>'<label class="tk'+(S.chk[key][i]?' ok':'')+'"><input type="checkbox" data-i="'+i+'"'+(S.chk[key][i]?' checked':'')+'><span>'+esc(t)+'</span></label>').join('');
+  $$('input',box).forEach(inp=>inp.addEventListener('change',()=>{
+    S.chk[key][inp.dataset.i]=inp.checked;
+    inp.closest('.tk').classList.toggle('ok',inp.checked);
+    save();if(cb)cb();
+  }));
+}
+function m2Msg(){
+  const c=Object.keys(S.chk.m2||{}).filter(k=>S.chk.m2[k]).length;
+  let m='Marque os itens acima para ver o seu resultado.';
+  if(c>=1&&c<=3)m='Você marcou '+c+' sinal(is). Está num momento em que prevenção e constância fazem muita diferença: comece pelo Prato Wa e pelo ritual de 7 minutos.';
+  else if(c>=4&&c<=7)m='Você marcou '+c+' sinais. É um padrão muito comum depois dos 40. Foque nos 4 reguladores (músculo, prato, sono e estresse) e leia o módulo 10.';
+  else if(c>=8)m='Você marcou '+c+' sinais. Vale usar o protocolo como apoio diário e também conversar com seu ginecologista ou endocrinologista (veja a lista de perguntas no módulo 10).';
+  $('m2Msg').textContent=m;
+}
+
+/* ---------- Termômetro dos 80% ---------- */
+function renderSat(){
+  const b=$('satBox');
+  b.innerHTML='<h4 style="margin-top:0">Sua saciedade, de 0 a 10</h4><div class="satbar"><i id="satMark"></i></div><div style="display:flex;justify-content:space-between;font-size:12px;color:var(--ink2)"><span>0 · Fome intensa</span><span>5</span><span>10 · Estufada</span></div><input type="range" id="satR" min="0" max="10" value="7" style="width:100%;margin-top:14px;accent-color:#D9777F"><div class="box tip" style="margin-bottom:0"><span class="ic" id="satE">🌸</span><div class="bd"><b class="t" id="satT"></b><p id="satD"></p></div></div>';
+  const upd=()=>{
+    const v=+$('satR').value;
+    $('satMark').style.left='calc('+(v*10)+'% - 3px)';
+    const L=SATLEVELS.find(l=>v>=l[0]&&v<=l[1]);
+    const parts=L[2].split(' ');
+    $('satE').textContent=parts[0];
+    $('satT').textContent=parts.slice(1).join(' ');
+    $('satD').textContent=L[3];
+  };
+  $('satR').addEventListener('input',upd);upd();
+}
+
+/* ---------- Desafio 30 vegetais ---------- */
+function renderVeg(){
+  const box=$('veg30');
+  box.innerHTML='<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:6px">'+VEG30.map((v,i)=>'<label class="sh" style="border:1px solid var(--line);border-radius:10px;padding:8px 10px'+(S.veg[i]?';background:var(--sage-l)':'')+'"><input type="checkbox" data-i="'+i+'"'+(S.veg[i]?' checked':'')+'><span>'+v+'</span></label>').join('')+'</div>';
+  const count=()=>{$('vegCount').textContent=Object.keys(S.veg).filter(k=>S.veg[k]).length};
+  $$('input',box).forEach(inp=>inp.addEventListener('change',()=>{
+    S.veg[inp.dataset.i]=inp.checked;
+    inp.closest('label').style.background=inp.checked?'var(--sage-l)':'';
+    save();count();
+  }));
+  count();
+}
+
+/* ---------- Cardápios e compras ---------- */
+function renderMenu(){
+  const sel=S.menuSel||'A';
+  $$('#menuSel button').forEach(b=>b.classList.toggle('on',b.dataset.m===sel));
+  $('menuBox').innerHTML=MENU[sel].map(m=>'<div class="menu-day"><h4>'+m.d+'</h4><div><b>☀️ Café</b>'+m.c+'</div><div><b>🍽️ Almoço</b>'+m.a+'</div><div><b>🍵 Lanche</b>'+m.l+'</div><div><b>🌙 Jantar</b>'+m.j+'</div></div>').join('');
+}
+function renderShop(){
+  $('shopBox').innerHTML=SHOP.map(c=>'<h4>'+c[0]+'</h4>'+c[1].map(it=>'<label class="sh'+(S.shop[it]?' ok':'')+'"><input type="checkbox" data-it="'+esc(it)+'"'+(S.shop[it]?' checked':'')+'><span>'+it+'</span></label>').join('')).join('');
+  $$('#shopBox input').forEach(inp=>inp.addEventListener('change',()=>{
+    S.shop[inp.dataset.it]=inp.checked;
+    inp.closest('.sh').classList.toggle('ok',inp.checked);
+    save();
+  }));
+}
+
+/* ---------- Receitas ---------- */
+let recF='todas';
+function recCard(r,i){
+  return '<details class="rec"><summary><span class="e">'+r.e+'</span><div><div class="tt">'+r.n+'</div><div class="ss">'+r.t+' · '+r.p+' · '+LVL[r.l]+'</div></div><button class="heart" data-r="'+i+'" aria-label="Favoritar">'+(S.fav[i]?'❤️':'🤍')+'</button></summary><div class="rb"><p style="margin-top:10px">'+r.tg.map(t=>'<span class="pill g">'+t+'</span>').join('')+'</p><h5>Ingredientes</h5><ul>'+r.i.map(x=>'<li>'+x+'</li>').join('')+'</ul><h5>Modo de preparo</h5><ol>'+r.s.map(x=>'<li>'+x+'</li>').join('')+'</ol><div class="box tip" style="margin:12px 0 0"><span class="ic">💡</span><div class="bd"><p>'+r.d+'</p></div></div></div></details>';
+}
+function renderRecipes(){
+  $('recFilters').innerHTML=REC_CATS.map(c=>'<button data-f="'+c[0]+'" class="'+(recF===c[0]?'on':'')+'">'+c[1]+'</button>').join('');
+  const list=REC.map((r,i)=>({r:r,i:i})).filter(o=>recF==='todas'||(recF==='facil'?o.r.l===1:o.r.c===recF));
+  $('recBox').innerHTML=list.map(o=>recCard(o.r,o.i)).join('')||'<p>Nenhuma receita nessa categoria.</p>';
+  renderFav();
+}
+function renderFav(){
+  const f=REC.map((r,i)=>({r:r,i:i})).filter(o=>S.fav[o.i]);
+  $('favBox').innerHTML=f.length?f.map(o=>recCard(o.r,o.i)).join(''):'<p style="margin:0;color:var(--ink2)">Toque no 🤍 de qualquer receita para guardá-la aqui.</p>';
+}
+
+/* ---------- Cronômetro do ritual ---------- */
+const PL={i:-1,left:5,total:5,run:false,end:0,iv:null};
+function beep(f,d){
+  try{
+    const C=window.AudioContext||window.webkitAudioContext;if(!C)return;
+    PL.ac=PL.ac||new C();
+    const o=PL.ac.createOscillator(),g=PL.ac.createGain();
+    o.frequency.value=f||660;g.gain.value=.08;
+    o.connect(g);g.connect(PL.ac.destination);
+    o.start();o.stop(PL.ac.currentTime+(d||.15));
+  }catch(e){}
+}
+function fmt(s){return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')}
+function plBuild(){
+  $('player').innerHTML='<h3 id="plT">Ritual dos 7 Minutos</h3><p style="opacity:.8;font-size:14px;margin:0" id="plS">Pronta? Respire fundo e toque em iniciar.</p><div class="ring"><svg width="200" height="200" viewBox="0 0 200 200"><circle cx="100" cy="100" r="88" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="10"/><circle id="plC" cx="100" cy="100" r="88" fill="none" stroke="#F2A7A7" stroke-width="10" stroke-linecap="round" stroke-dasharray="553" stroke-dashoffset="0"/></svg><div class="tm"><span id="plTm">0:05</span><small id="plSm">PREPARE-SE</small></div></div><div class="cue" id="plCue"></div><div class="steps" id="plSt"></div><div class="ctrl"><button class="btn rose" id="plGo">▶ Iniciar</button><button class="btn ghost sm" id="plSkip">Pular ⏭</button><button class="btn ghost sm" id="plRst">↺ Reiniciar</button></div><p style="font-size:13px;opacity:.75;margin:14px 0 0" id="plCnt"></p>';
+  $('plGo').addEventListener('click',()=>PL.run?plPause():plStart());
+  $('plSkip').addEventListener('click',plNext);
+  $('plRst').addEventListener('click',plReset);
+  plSet(-1);
+}
+function plSet(i){
+  PL.i=i;
+  PL.total=i===-1?5:60;PL.left=PL.total;
+  const t=$('plT'),s=$('plS'),sm=$('plSm'),cue=$('plCue');
+  if(i===-1){t.textContent='Prepare-se';s.textContent='Pé no chão, ombros soltos. O primeiro movimento é o Despertar do Grou.';sm.textContent='PREPARE-SE';cue.textContent='Respire fundo. 7 minutos, 7 movimentos, sem pressa.'}
+  else if(i<7){t.textContent=EX[i].e+' '+EX[i].n;s.textContent='Movimento '+(i+1)+' de 7';sm.textContent='MOVIMENTO '+(i+1)+'/7';cue.textContent=EX[i].c}
+  else{
+    t.textContent='🌸 Ritual concluído!';s.textContent='Você acaba de fazer algo bom pelo seu corpo.';sm.textContent='PARABÉNS';
+    cue.textContent='Respire fundo e sinta o corpo. Marque o ritual de hoje no calendário.';
+  }
+  $('plSt').innerHTML=EX.map((x,k)=>'<i class="'+(k<i?'ok':(k===i?'on':''))+'"></i>').join('');
+  plDraw();
+  const c=S.rituals||0;
+  $('plCnt').textContent=c?('Rituais completos com o cronômetro: '+c):'';
+}
+function plDraw(){
+  const C=553;
+  $('plC').style.strokeDashoffset=String(C*(1-(PL.i===7?1:PL.left/PL.total)));
+  $('plTm').textContent=PL.i===7?'✓':fmt(PL.left);
+}
+function plTick(){
+  if(!PL.run)return;
+  const rem=Math.max(0,Math.ceil((PL.end-Date.now())/1000));
+  if(rem!==PL.left){PL.left=rem;plDraw();if(rem>0&&rem<=3)beep(520,.08)}
+  if(rem<=0)plNext();
+}
+function plStart(){
+  if(PL.i===7)plSet(-1);
+  PL.run=true;PL.end=Date.now()+PL.left*1000;
+  clearInterval(PL.iv);PL.iv=setInterval(plTick,250);
+  $('plGo').textContent='⏸ Pausar';
+  beep(660,.12);
+}
+function plPause(){
+  PL.run=false;clearInterval(PL.iv);
+  $('plGo').textContent='▶ Continuar';
+}
+function plNext(){
+  const wasRun=PL.run;
+  if(PL.i>=6){
+    clearInterval(PL.iv);PL.run=false;
+    if(PL.i===6){S.rituals=(S.rituals||0)+1;save()}
+    plSet(7);
+    $('plGo').textContent='↺ Fazer de novo';
+    beep(880,.3);return;
+  }
+  if(PL.i===7)return;
+  plSet(PL.i+1);
+  if(wasRun){PL.end=Date.now()+PL.left*1000;beep(660,.15)}
+}
+function plReset(){
+  clearInterval(PL.iv);PL.run=false;
+  plSet(-1);$('plGo').textContent='▶ Iniciar';
+}
+
+/* ---------- Truques ---------- */
+function renderTrucks(){
+  $('trucks').innerHTML=TRUCKS.map((t,i)=>'<div class="box act"><span class="ic">'+t[0]+'</span><div class="bd"><b class="t">'+(i+1)+' · '+t[1]+'</b><p><b>Como fazer:</b> '+t[2]+'</p><p><b>Por que ajuda:</b> '+t[3]+'</p><label class="sh" style="border:0;padding:4px 0"><input type="checkbox" data-i="'+i+'"'+(S.trk[i]?' checked':'')+'><span>Já faço isso</span></label></div></div>').join('');
+  $$('#trucks input').forEach(inp=>inp.addEventListener('change',()=>{S.trk[inp.dataset.i]=inp.checked;save()}));
+}
+
+/* ---------- Respiração Ma ---------- */
+const BR={on:false,t:null,n:0};
+function renderBreath(){
+  $('breathBox').innerHTML='<h4 style="margin-top:0">Respiração 4-2-6</h4><p style="font-size:14px;color:var(--ink2)">Inspire 4 segundos · segure 2 · expire 6. Repita 6 vezes (cerca de 1 minuto e meio).</p><div class="orb" id="brOrb">Pronta?</div><p id="brTxt" style="min-height:24px"></p><button class="btn rose sm" id="brGo">Começar</button>';
+  $('brGo').addEventListener('click',()=>{BR.on?brStop():brStart()});
+}
+function brStart(){BR.on=true;BR.n=0;$('brGo').textContent='Parar';brStep(0)}
+function brStop(){
+  BR.on=false;clearTimeout(BR.t);
+  const o=$('brOrb');o.style.transitionDuration='1s';o.style.transform='scale(1)';o.textContent='Pronta?';
+  $('brTxt').textContent='';$('brGo').textContent='Começar';
+}
+function brStep(k){
+  if(!BR.on)return;
+  const cfg=[['Inspire',4,1.35],['Segure',2,1.35],['Expire',6,1]];
+  const c=cfg[k],o=$('brOrb');
+  o.style.transitionDuration=(k===1?0:c[1])+'s';
+  o.style.transform='scale('+c[2]+')';
+  o.textContent=c[0];
+  $('brTxt').textContent='Ciclo '+(BR.n+1)+' de 6';
+  BR.t=setTimeout(()=>{
+    if(k===2){BR.n++;if(BR.n>=6){brStop();$('brTxt').textContent='🌸 Muito bem. Sinta o corpo mais leve.';return}}
+    brStep((k+1)%3);
+  },c[1]*1000);
+}
+
+/* ---------- Painel de medidas ---------- */
+const TK=[["cintura","Cintura (cm)","number"],["quadril","Quadril (cm)","number"],["energia","Energia ao acordar (1-10)","number"],["sono","Qualidade do sono (1-10)","number"],["calca","Calça-teste","sel"]];
+function renderTrack(){
+  const calc=['','Apertada','Justa','Confortável','Folgada'];
+  let h='<div class="tw" style="margin:0"><table><tr><th>Medida</th><th>Sem. 1</th><th>Sem. 2</th><th>Sem. 3</th><th>Sem. 4</th></tr>';
+  TK.forEach(t=>{
+    h+='<tr><td><b>'+t[1]+'</b></td>';
+    for(let w=0;w<4;w++){
+      const v=(S.trk2[w]&&S.trk2[w][t[0]])||'';
+      if(t[2]==='sel')h+='<td><select data-w="'+w+'" data-k="'+t[0]+'" style="padding:8px">'+calc.map(o=>'<option'+(o===v?' selected':'')+'>'+o+'</option>').join('')+'</select></td>';
+      else h+='<td><input type="number" step="0.1" data-w="'+w+'" data-k="'+t[0]+'" value="'+esc(v)+'" style="padding:8px;min-width:70px"></td>';
+    }
+    h+='</tr>';
+  });
+  h+='</table></div>';
+  $('trackBox').innerHTML=h;
+  $$('#trackBox [data-w]').forEach(el=>el.addEventListener('input',()=>{
+    const w=el.dataset.w;if(!S.trk2[w])S.trk2[w]={};
+    S.trk2[w][el.dataset.k]=el.value;save();drawTrack();
+  }));
+  drawTrack();
+}
+function lineChart(title,series,min,max,unit){
+  const W=600,H=230,L=44,R=16,T=18,B=46;
+  const all=series.reduce((a,s)=>a.concat(s.v.filter(x=>x!==null)),[]);
+  if(!all.length)return '<h4 style="margin:10px 0 4px">'+title+'</h4><p style="color:var(--ink2);font-size:14px">Preencha as semanas na tabela acima para ver o gráfico.</p>';
+  if(min===null){const lo=Math.min.apply(null,all),hi=Math.max.apply(null,all);min=Math.floor(lo-2);max=Math.ceil(hi+2)}
+  const x=i=>L+i*((W-L-R)/3),y=v=>T+(1-(v-min)/(max-min))*(H-T-B);
+  let s='<svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="'+title+'">';
+  for(let g=0;g<=4;g++){
+    const val=min+(max-min)*g/4,yy=y(val);
+    s+='<line x1="'+L+'" y1="'+yy+'" x2="'+(W-R)+'" y2="'+yy+'" stroke="#EADFD5"/><text x="'+(L-8)+'" y="'+(yy+4)+'" font-size="11" text-anchor="end" fill="#6B6264">'+(Math.round(val*10)/10)+'</text>';
+  }
+  for(let i=0;i<4;i++)s+='<text x="'+x(i)+'" y="'+(H-24)+'" font-size="12" text-anchor="middle" fill="#6B6264">Sem. '+(i+1)+'</text>';
+  series.forEach((se,k)=>{
+    const pts=se.v.map((v,i)=>v===null?null:[x(i),y(v)]).filter(Boolean);
+    if(pts.length>1)s+='<polyline fill="none" stroke="'+se.c+'" stroke-width="3" points="'+pts.map(p=>p.join(',')).join(' ')+'"/>';
+    se.v.forEach((v,i)=>{if(v!==null)s+='<circle cx="'+x(i)+'" cy="'+y(v)+'" r="5" fill="'+se.c+'"/><text x="'+x(i)+'" y="'+(y(v)-9)+'" font-size="11" text-anchor="middle" fill="#2E2A2B">'+v+'</text>'});
+    s+='<rect x="'+(L+k*130)+'" y="'+(H-12)+'" width="10" height="10" rx="3" fill="'+se.c+'"/><text x="'+(L+k*130+15)+'" y="'+(H-3)+'" font-size="11" fill="#2E2A2B">'+se.n+'</text>';
+  });
+  return '<h4 style="margin:10px 0 4px">'+title+'</h4>'+s+'</svg>';
+}
+function drawTrack(){
+  const get=k=>[0,1,2,3].map(w=>{const v=S.trk2[w]&&S.trk2[w][k];return(v===undefined||v===''||isNaN(parseFloat(v)))?null:parseFloat(v)});
+  $('trackChart').innerHTML=
+    lineChart('Cintura e quadril (cm)',[{n:'Cintura',c:'#D9777F',v:get('cintura')},{n:'Quadril',c:'#C9A84C',v:get('quadril')}],null,null)+
+    lineChart('Energia e sono (1 a 10)',[{n:'Energia',c:'#5F8A5B',v:get('energia')},{n:'Sono',c:'#5560A8',v:get('sono')}],0,10);
+}
+
+/* ---------- Calendário ---------- */
+let selDay=0;
+function dayN(d){const a=S.cal[d];return a?a.filter(Boolean).length:0}
+function calStats(){
+  let full=0,best=0,cur=0;
+  for(let d=1;d<=28;d++){if(dayN(d)===3){full++;cur++;best=Math.max(best,cur)}else cur=0}
+  const wk=[0,1,2,3].map(w=>[1,2,3,4,5,6,7].every(k=>dayN(w*7+k)===3));
+  return{full:full,best:best,wk:wk};
+}
+function renderCal(){
+  const st=calStats();
+  if(!selDay){selDay=1;for(let d=1;d<=28;d++){if(dayN(d)<3){selDay=d;break}}}
+  const earned=[st.full>=1,st.best>=3,st.wk[0],st.wk[1],st.wk[2],st.wk[3],st.full>=28];
+  let h='<div class="stats"><div class="stat"><b>'+st.full+'/28</b><small>dias completos</small></div><div class="stat"><b>'+st.best+'</b><small>maior sequência</small></div><div class="stat"><b>'+(S.rituals||0)+'</b><small>rituais no cronômetro</small></div></div>';
+  h+='<div class="badges">'+BADGES.map((b,i)=>'<div class="badge'+(earned[i]?' on':'')+'"><div class="e">'+b[0]+'</div><b>'+b[1]+'</b><small>'+b[2]+'</small></div>').join('')+'</div>';
+  const w=Math.floor((selDay-1)/7),c=CAL[selDay-1],a=S.cal[selDay]||[false,false,false];
+  const tasks=[['🍚 Shoku',c[0]],['🌸 Undō',WEEKS[w].u],['🏡 Seikatsu',c[1]]];
+  h+='<div class="dpanel"><h3>Dia '+selDay+' · '+WEEKS[w].t+'</h3><div class="ph">'+c[2]+'</div>'+tasks.map((t,i)=>'<label class="tk'+(a[i]?' ok':'')+'"><input type="checkbox" data-t="'+i+'"'+(a[i]?' checked':'')+'><span><b>'+t[0]+'</b>'+t[1]+(i===1?' <a href="#p-m07" data-go="p-m07" style="color:var(--verm);font-weight:700">Abrir cronômetro →</a>':'')+'</span></label>').join('');
+  if(dayN(selDay)===3&&selDay%7===0)h+='<div class="box tip" style="margin-bottom:0"><span class="ic">🏅</span><div class="bd"><b class="t">Marco do dia '+selDay+' conquistado!</b><p>'+(selDay===28?'Protocolo concluído! Vá ao módulo 16 para preencher a Carta de Compromisso e emitir o seu certificado.':'Você completou mais uma semana. Respire fundo e sinta o que mudou: sono, energia, roupa, humor.')+'</p></div></div>';
+  h+='</div>';
+  for(let wk=0;wk<4;wk++){
+    h+='<div class="weekh"><span>'+WEEKS[wk].t+'</span><span class="wb">Dias '+(wk*7+1)+' a '+(wk*7+7)+(st.wk[wk]?' · ✅ completa':'')+'</span></div><div class="cal">';
+    for(let k=1;k<=7;k++){
+      const d=wk*7+k,n=dayN(d);
+      h+='<button class="day'+(n===3?' full':(n>0?' part':''))+(d%7===0?' mile':'')+(d===selDay?' sel':'')+'" data-d="'+d+'">'+d+'<small>dia</small></button>';
+    }
+    h+='</div>';
+  }
+  h+='<div style="margin-top:20px"><button class="btn ghost sm" id="calReset">Zerar calendário</button></div>';
+  $('calBox').innerHTML=h;
+  $$('#calBox .day').forEach(b=>b.addEventListener('click',()=>{selDay=+b.dataset.d;renderCal()}));
+  $$('#calBox .dpanel input').forEach(inp=>inp.addEventListener('change',()=>{
+    if(!S.cal[selDay])S.cal[selDay]=[false,false,false];
+    S.cal[selDay][inp.dataset.t]=inp.checked;save();renderCal();renderCert();
+  }));
+  $('calReset').addEventListener('click',()=>{if(confirm('Zerar todo o calendário de 28 dias?')){S.cal={};save();selDay=0;renderCal();renderCert()}});
+}
+
+/* ---------- Ferramentas de coaching ---------- */
+function renderWheel(){
+  const box=$('wheelBox');
+  box.innerHTML='<div class="wheel"><div id="whSl"></div><div id="whSvg" style="text-align:center"></div></div><p id="whMin" style="margin:12px 0 0;font-weight:600"></p>';
+  $('whSl').innerHTML=WHEEL.map((n,i)=>{
+    const v=S.wheel[i]!==undefined?S.wheel[i]:5;
+    return '<div class="sl"><label><span>'+n+'</span><b id="whv'+i+'">'+v+'</b></label><input type="range" min="0" max="10" value="'+v+'" data-i="'+i+'"></div>';
+  }).join('');
+  $$('#whSl input').forEach(inp=>inp.addEventListener('input',()=>{
+    S.wheel[inp.dataset.i]=+inp.value;$('whv'+inp.dataset.i).textContent=inp.value;save();drawWheel();
+  }));
+  drawWheel();
+}
+function drawWheel(){
+  const cx=150,cy=150,R=105,n=WHEEL.length;
+  const vals=WHEEL.map((_,i)=>S.wheel[i]!==undefined?S.wheel[i]:5);
+  const pt=(i,r)=>{const a=-Math.PI/2+i*2*Math.PI/n;return[cx+Math.cos(a)*r,cy+Math.sin(a)*r]};
+  let s='<svg viewBox="0 0 300 300" width="100%" style="max-width:300px" role="img" aria-label="Roda da vida">';
+  [2,4,6,8,10].forEach(l=>{s+='<polygon points="'+WHEEL.map((_,i)=>pt(i,R*l/10).join(',')).join(' ')+'" fill="none" stroke="#EADFD5"/>'});
+  WHEEL.forEach((nm,i)=>{
+    const p=pt(i,R),q=pt(i,R+16);
+    s+='<line x1="'+cx+'" y1="'+cy+'" x2="'+p[0]+'" y2="'+p[1]+'" stroke="#EADFD5"/><text x="'+q[0]+'" y="'+(q[1]+3)+'" font-size="9" text-anchor="middle" fill="#6B6264">'+(i+1)+'</text>';
+  });
+  s+='<polygon points="'+vals.map((v,i)=>pt(i,R*v/10).join(',')).join(' ')+'" fill="rgba(217,119,127,.35)" stroke="#D9777F" stroke-width="2.5"/>';
+  vals.forEach((v,i)=>{const p=pt(i,R*v/10);s+='<circle cx="'+p[0]+'" cy="'+p[1]+'" r="4" fill="#D9777F"/>'});
+  s+='</svg><p style="font-size:12px;color:var(--ink2);margin:4px 0 0">Os números ao redor correspondem à ordem dos controles.</p>';
+  $('whSvg').innerHTML=s;
+  let mi=0;vals.forEach((v,i)=>{if(v<vals[mi])mi=i});
+  $('whMin').textContent='Sua área mais baixa hoje: '+WHEEL[mi]+' ('+vals[mi]+'). É aqui que um pequeno passo faz mais diferença.';
+}
+function renderCheckins(){
+  const fields=[['ck_emo','Como me senti emocionalmente (1 palavra):','text'],['ck_des','Maior desafio da semana:','ta'],['ck_dias','Quantos dias segui o protocolo (0 a 7):','text'],['ck_ok','O que funcionou bem:','ta'],['ck_mel','O que posso melhorar:','ta'],['ck_en','Energia (1-10) e sono (1-10):','text'],['ck_vit','Minhas 3 vitórias desta semana (pequenas contam!):','ta']];
+  $('checkins').innerHTML=[1,2,3,4].map(w=>'<details class="rec"><summary><span class="e">✅</span><div><div class="tt">Check-in da Semana '+w+'</div><div class="ss">Toque para preencher</div></div></summary><div class="rb activity" style="border:0;margin:0;background:none;padding:6px 20px 18px">'+fields.map(f=>'<label class="fl">'+f[1]+'</label>'+(f[2]==='ta'?'<textarea data-save="'+f[0]+w+'"></textarea>':'<input type="text" data-save="'+f[0]+w+'">')).join('')+'<div class="saved"></div></div></details>').join('');
+  bindFields($('checkins'));
+}
+function today(){try{return new Date().toLocaleDateString('sv-SE')}catch(e){return new Date().toISOString().slice(0,10)}}
+function renderDiary(){
+  const t=today(),e=S.diary.find(x=>x.d===t);
+  if(e&&!$('dv1').value&&!$('dv2').value&&!$('dv3').value){$('dv1').value=e.a;$('dv2').value=e.b;$('dv3').value=e.c}
+  const rows=S.diary.slice().sort((a,b)=>a.d<b.d?1:-1).slice(0,7);
+  $('diary').innerHTML=rows.length?'<h4 style="margin-top:18px">Últimas vitórias</h4>'+rows.map(r=>'<div class="menu-day"><h4>'+r.d.split('-').reverse().join('/')+'</h4><div>⚡ '+esc(r.a||'—')+'</div><div>🧠 '+esc(r.b||'—')+'</div><div>🌟 '+esc(r.c||'—')+'</div></div>').join(''):'<p style="color:var(--ink2);margin-top:14px">Nenhuma vitória salva ainda. Comece hoje!</p>';
+}
+function bindDiary(){
+  $('dvSave').addEventListener('click',()=>{
+    const a=$('dv1').value.trim(),b=$('dv2').value.trim(),c=$('dv3').value.trim();
+    if(!a&&!b&&!c)return;
+    const t=today();
+    S.diary=S.diary.filter(x=>x.d!==t);
+    S.diary.push({d:t,a:a,b:b,c:c});save();
+    $('dvSave').textContent='✓ Salvo! Vitória do dia registrada';
+    setTimeout(()=>{$('dvSave').textContent='Salvar a vitória de hoje'},1800);
+    renderDiary();
+  });
+}
+
+/* ---------- Testes ---------- */
+function renderQuizzes(){
+  const L=['A','B','C','D'];
+  $('quizBox').innerHTML=QUIZZES.map(q=>{
+    if(!S.quiz[q.id])S.quiz[q.id]={a:[]};
+    const ans=S.quiz[q.id].a;
+    return '<div class="quiz" id="'+q.id+'"><h2 style="margin-top:0">'+q.icon+' '+q.title+'</h2><p>'+q.intro+'</p>'+q.qs.map((qq,qi)=>'<div class="qq"><p>'+(qi+1)+'. '+qq[0]+'</p>'+qq[1].map((o,oi)=>'<div class="opt'+(ans[qi]===L[oi]?' on':'')+'" data-q="'+qi+'" data-o="'+L[oi]+'"><i>'+L[oi]+'</i><span>'+o+'</span></div>').join('')+'</div>').join('')+'<button class="btn rose" data-calc="'+q.id+'">Ver meu resultado →</button> <button class="btn ghost sm" data-redo="'+q.id+'">Refazer</button><p class="qwarn" style="color:var(--verm);font-size:14px;min-height:20px;margin-top:8px"></p><div class="qres" id="res-'+q.id+'"></div></div>';
+  }).join('');
+  QUIZZES.forEach(q=>{if((S.quiz[q.id].a||[]).filter(Boolean).length===q.qs.length)showResult(q.id)});
+}
+function showResult(id){
+  const q=QUIZZES.find(x=>x.id===id),ans=S.quiz[id].a,warn=$$('.qwarn',$(id))[0];
+  if(ans.filter(Boolean).length<q.qs.length){warn.textContent='Responda todas as perguntas para ver o resultado.';return}
+  warn.textContent='';
+  const cnt={A:0,B:0,C:0,D:0};ans.forEach(a=>{if(cnt[a]!==undefined)cnt[a]++});
+  let best='A';['B','C','D'].forEach(k=>{if(cnt[k]>cnt[best])best=k});
+  const r=q.res[best];
+  const total=q.qs.length;
+  const bars=['A','B','C','D'].map(k=>'<div class="br"><span>'+q.res[k].t+'</span><div><i style="width:'+Math.round(cnt[k]/total*100)+'%"></i></div><b>'+cnt[k]+'</b></div>').join('');
+  const box=$('res-'+id);
+  box.innerHTML='<p class="eyebrow" style="margin-bottom:4px">Seu resultado</p><h3>'+r.e+' '+r.t+'</h3><p>'+r.d+'</p><div class="box act" style="margin:12px 0"><span class="ic">🎯</span><div class="bd"><b class="t">Como usar no protocolo</b><p>'+r.u+'</p></div></div><div class="bars">'+bars+'</div><p style="font-size:13px;color:var(--ink2);margin:10px 0 0">Muitas vezes a gente é um pouco de cada. Use o perfil principal como ponto de partida.</p>';
+  box.classList.add('show');
+  S.quiz[id].res=best;save();
+}
+
+/* ---------- Certificado ---------- */
+function renderCert(){
+  const box=$('certBox');if(!box)return;
+  const st=calStats(),n=MODS.filter(id=>S.done[id]).length;
+  const prev=$('certName');const val=prev?prev.value:(S.name||'');
+  box.innerHTML='<div class="card"><label class="fl" style="margin-top:0">Escreva o seu nome para o certificado:</label><input type="text" id="certName" placeholder="Seu nome" value="'+esc(val)+'"></div><div class="cert"><div class="sun">和</div><p class="eyebrow">Certificado de Conclusão</p><h2>Protocolo das Japonesas</h2><p>Certificamos que</p><div class="nm" id="certNm">'+esc(val||'________________')+'</div><p>dedicou-se ao cuidado do próprio corpo e da própria rotina com o <b>Método Wa</b>: Shoku, Undō e Seikatsu.</p><p style="font-size:14px;color:var(--ink2)">Dias completos no calendário: <b>'+st.full+'/28</b> · Módulos concluídos: <b>'+n+'/'+MODS.length+'</b><br>'+new Date().toLocaleDateString('pt-BR')+'</p></div><p style="text-align:center"><button class="btn sm" data-print>🖨️ Imprimir certificado</button></p>';
+  $('certName').addEventListener('input',e=>{S.name=e.target.value;save();$('certNm').textContent=e.target.value||'________________'});
+}
+
+/* ---------- Init ---------- */
+document.addEventListener('click',e=>{
+  const g=e.target.closest('[data-go]');
+  if(g){e.preventDefault();go(g.dataset.go);return}
+  const dn=e.target.closest('[data-done]');
+  if(dn){const id=dn.dataset.done;S.done[id]=!S.done[id];save();updateProgress();return}
+  if(e.target.closest('[data-print]')){window.print();return}
+  const h=e.target.closest('.heart');
+  if(h){
+    e.preventDefault();e.stopPropagation();
+    const i=h.dataset.r;S.fav[i]=!S.fav[i];save();
+    $$('.heart[data-r="'+i+'"]').forEach(x=>{x.textContent=S.fav[i]?'❤️':'🤍'});
+    renderFav();return;
+  }
+  const f=e.target.closest('#recFilters [data-f]');
+  if(f){recF=f.dataset.f;renderRecipes();return}
+  const ms=e.target.closest('#menuSel [data-m]');
+  if(ms){S.menuSel=ms.dataset.m;save();renderMenu();return}
+  const op=e.target.closest('.opt');
+  if(op){
+    const quiz=op.closest('.quiz').id;
+    S.quiz[quiz].a[+op.dataset.q]=op.dataset.o;save();
+    $$('.opt[data-q="'+op.dataset.q+'"]',op.closest('.quiz')).forEach(x=>x.classList.toggle('on',x===op));
+    return;
+  }
+  const cb=e.target.closest('[data-calc]');
+  if(cb){showResult(cb.dataset.calc);return}
+  const rd=e.target.closest('[data-redo]');
+  if(rd){
+    const id=rd.dataset.redo;S.quiz[id]={a:[]};save();
+    const el=$(id);$$('.opt',el).forEach(x=>x.classList.remove('on'));
+    $('res-'+id).classList.remove('show');
+    el.scrollIntoView({behavior:'smooth',block:'start'});return;
+  }
+});
+$('burger').addEventListener('click',openSide);
+$('veil').addEventListener('click',closeSide);
+$('vegReset').addEventListener('click',()=>{S.veg={};save();renderVeg()});
+$('shopReset').addEventListener('click',()=>{S.shop={};save();renderShop()});
+
+buildNav();addPagers();renderIndex();petals();
+renderChecks('m1Signs',SIGNS1,'m1');
+renderChecks('m2Signs',SIGNS2,'m2',m2Msg);m2Msg();
+renderSat();renderVeg();renderMenu();renderShop();renderRecipes();
+plBuild();renderTrucks();renderBreath();renderTrack();renderCal();
+renderWheel();renderCheckins();bindDiary();renderDiary();renderQuizzes();renderCert();
+bindFields(document);updateProgress();
+go((location.hash||'').slice(1)||S.last||'p-capa');
+
+</script>
+</body>
+</html>
